@@ -244,26 +244,6 @@ labelRbTipo.textContent = "Elige el tipo de servicio";
 r1c1Serv.appendChild(labelRbTipo);
 
 
-
-//*-------Radio Button 1-------*//
-
-/*//Div de la 1ª fila de los tipos de masa
-const row2Opc = document.createElement("div");
-row2Opc.classList.add("fieldset-row");
-fieldsetOpciones.appendChild(row2Opc);
-
-//Div de la columna donde irán los tipos de masa
-const r2c1Opc = document.createElement("div");
-r2c1Opc.classList.add("fieldset-column");
-row2Opc.appendChild(r2c1Opc);
-
-//Nodos de la etiqueta label (masa)
-const labelRbMasa = document.createElement("label");
-labelRbMasa.textContent = "Elige el tipo de masa";
-r2c1Opc.appendChild(labelRbMasa);
-*/
-
-
 //----Radio Button 1 ----//
 
 //Contenedor de la primera opción del RB
@@ -284,6 +264,7 @@ const labelRbTipo1 = document.createElement("label");
 labelRbTipo1.setAttribute("id", "labelrb1");
 labelRbTipo1.setAttribute("for", "rb1");
 labelRbTipo1.textContent="Primera cita de evaluación";
+
 //Vincular el radio button y label al div
 rowRb1.appendChild(inpRb1);
 rowRb1.appendChild(labelRbTipo1); 
@@ -295,6 +276,7 @@ rowRb1.appendChild(labelRbTipo1);
 const rowRb2 = document.createElement("div");
 rowRb2.classList.add("inline-column");
 r1c1Serv.appendChild(rowRb2);
+
 //Nodos 
 const inpRb2 = document.createElement("input");
 inpRb2.setAttribute("type", "radio");
@@ -308,6 +290,7 @@ const labelRbTipo2 = document.createElement("label");
 labelRbTipo2.setAttribute("id", "labelrb2");
 labelRbTipo2.setAttribute("for", "rb2");
 labelRbTipo2.textContent="Terapia Cognitivo Conductual";
+
 //Vincular el radio button y label al div
 rowRb2.appendChild(inpRb2);
 rowRb2.appendChild(labelRbTipo2);
@@ -319,6 +302,7 @@ rowRb2.appendChild(labelRbTipo2);
 const rowRb3 = document.createElement("div");
 rowRb3.classList.add("inline-column");
 r1c1Serv.appendChild(rowRb3);
+
 //Nodos 
 const inpRb3 = document.createElement("input");
 inpRb3.setAttribute("type", "radio");
@@ -332,6 +316,7 @@ const labelRbTipo3 = document.createElement("label");
 labelRbTipo3.setAttribute("id", "labelrb3");
 labelRbTipo3.setAttribute("for", "rb3");
 labelRbTipo3.textContent="Sesión de coaching";
+
 //Vincular el radio button y label al div
 rowRb3.appendChild(inpRb3);
 rowRb3.appendChild(labelRbTipo3);
@@ -343,6 +328,7 @@ rowRb3.appendChild(labelRbTipo3);
 const rowRb4 = document.createElement("div");
 rowRb4.classList.add("inline-column");
 r1c1Serv.appendChild(rowRb4);
+
 //Nodos 
 const inpRb4 = document.createElement("input");
 inpRb4.setAttribute("type", "radio");
@@ -356,14 +342,28 @@ const labelRbTipo4 = document.createElement("label");
 labelRbTipo4.setAttribute("id", "labelrb4");
 labelRbTipo4.setAttribute("for", "rb4");
 labelRbTipo4.textContent="Cita con Psiquiatra";
+
 //Vincular el radio button y label al div
 rowRb4.appendChild(inpRb4);
 rowRb4.appendChild(labelRbTipo4);
 
 
+//----- Imagen 1 ------//
+// Div de la columna donde irá una imagen
+const r1c2Serv = document.createElement("div");
+r1c2Serv.classList.add("fieldset-column");
+row1Serv.appendChild(r1c2Serv);
+//Nodo de la img
+const img1 = document.createElement("img");
+img1.setAttribute("alt", "terapeuta");
+img1.src = "images/terapeuta.jpg";
+img1.width = "200";
+//Vincular la img al div
+r1c2Serv.appendChild(img1);
 
 
 //-------- 2º fila ------//
+
 // div de la 2ª fila de las 
 const row2Serv = document.createElement("div");
 row2Serv.classList.add("fieldset-row");
