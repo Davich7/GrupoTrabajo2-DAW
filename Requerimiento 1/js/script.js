@@ -48,7 +48,7 @@ fieldsetGeneral.appendChild(fieldsetAcciones);
 
 
 /*
-============ Creación de la sección Datos Personales ============
+======================================= Creación de la sección Datos Personales ==========================================
 */
 
 
@@ -214,7 +214,7 @@ rowCon4.appendChild(inpCon4);
 
 
 /*
-============ Creación de la sección Servicio ============
+========================================== Creación de la sección Servicio ==========================================
 */
 
 //------ Estructura general de Servicio ------//
@@ -233,10 +233,15 @@ const row1Serv = document.createElement("div");
 row1Serv.classList.add("fieldset-row");
 fieldsetServicio.appendChild(row1Serv);
 
-// div de la columna donde irán los servicios a elegir
+// div de la columna donde irá el Radio Button con los  servicios a elegir
 const r1c1Serv = document.createElement("div");
 r1c1Serv.classList.add("fieldset-column");
 row1Serv.appendChild(r1c1Serv);
+
+
+/*------------------------/
+/---- Radio Button 1 -----/
+/------------------------*/
 
 // Nodos de la etiqueta label (Tipos de servicio)
 const labelRbTipo = document.createElement("label");
@@ -244,8 +249,7 @@ labelRbTipo.textContent = "Elige el tipo de servicio";
 r1c1Serv.appendChild(labelRbTipo);
 
 
-//----Radio Button 1 ----//
-
+//----RB Opción 1 ----//
 //Contenedor de la primera opción del RB
 const rowRb1 = document.createElement("div");
 rowRb1.classList.add("inline-column");
@@ -270,7 +274,7 @@ rowRb1.appendChild(inpRb1);
 rowRb1.appendChild(labelRbTipo1); 
 
 
-//----Radio Button 2 ----//
+//----RB Opción 2 ----//
 
 //Contenedor de la 2ª opción del RB
 const rowRb2 = document.createElement("div");
@@ -296,7 +300,7 @@ rowRb2.appendChild(inpRb2);
 rowRb2.appendChild(labelRbTipo2);
 
 
-//----Radio Button 3 ----//
+//----RB Opción 3 ----//
 
 //Contenedor de la 3ª opción del RB 
 const rowRb3 = document.createElement("div");
@@ -322,7 +326,7 @@ rowRb3.appendChild(inpRb3);
 rowRb3.appendChild(labelRbTipo3);
 
 
-//----Radio Button 4 ----//
+//----RB Opción 4 ----//
 
 //Contenedor de la 4ª opción del RB
 const rowRb4 = document.createElement("div");
@@ -355,7 +359,7 @@ r1c2Serv.classList.add("fieldset-column");
 row1Serv.appendChild(r1c2Serv);
 //Nodo de la img
 const img1 = document.createElement("img");
-img1.setAttribute("alt", "terapeuta");
+img1.setAttribute("alt", "terapeuta_sentado_con_niño_al_lado");
 img1.src = "images/terapeuta.jpg";
 img1.width = "200";
 //Vincular la img al div
@@ -369,12 +373,206 @@ const row2Serv = document.createElement("div");
 row2Serv.classList.add("fieldset-row");
 fieldsetServicio.appendChild(row2Serv);
 
-// div de la columna donde irán los centros a elegir
+
+//----- Imagen 2 ------//
+// Div de la columna donde irá otra imagen
+
 const r2c1Serv = document.createElement("div");
 r2c1Serv.classList.add("fieldset-column");
 row2Serv.appendChild(r2c1Serv);
+//Nodo de la img
+const img2 = document.createElement("img");
+img2.setAttribute("alt", "las_cuatro_torres_madrid");
+img2.src = "images/cuatroTorres.jpg";
+img2.width = "200";
+//Vincular la img al div
+r2c1Serv.appendChild(img2);
+
+
+//------ 2º Columna 2º fila ------//
+
+// Div de la 2º columna donde irá el segundo radio Button
+
+const r2c2Serv = document.createElement("div");
+r2c2Serv.classList.add("fieldset-column");
+row2Serv.appendChild(r2c2Serv);
+
+/*------------------------/
+/---- Radio Button 2 -----/
+/------------------------*/
 
 // Nodos de la etiqueta label con los centros a elegir
 const labelRbNom = document.createElement("label");
 labelRbNom.textContent = "Elige un centro para la cita";
-r2c1Serv.appendChild(labelRbNom);
+r2c2Serv.appendChild(labelRbNom);
+
+
+//----RB Opción 1 ----//
+//Contenedor de la primera opción del RB 2
+const rowRb5 = document.createElement("div");
+rowRb5.classList.add("inline-column");
+r2c2Serv.appendChild(rowRb5);
+
+//Nodos 
+const inpRb5 = document.createElement("input");
+inpRb5.setAttribute("type", "radio");
+inpRb5.setAttribute("id", "rb1");
+inpRb5.setAttribute("name", "rbnom");
+inpRb5.setAttribute("value", "castellana");
+inpRb5.setAttribute("required", "required");
+
+//Etiqueta label
+const labelRbNom5 = document.createElement("label");
+labelRbNom5.setAttribute("id", "labelrb5");
+labelRbNom5.setAttribute("for", "rb5");
+labelRbNom5.textContent="Paseo de la Castellana 234 (Madrid)";
+
+//Vincular el radio button y label al div
+rowRb5.appendChild(inpRb5);
+rowRb5.appendChild(labelRbNom5); 
+
+
+//----RB Opción 2 ----//
+
+//Contenedor de la 2ª opción del RB 2
+const rowRb6 = document.createElement("div");
+rowRb6.classList.add("inline-column");
+r2c2Serv.appendChild(rowRb6);
+
+//Nodos 
+const inpRb6 = document.createElement("input");
+inpRb6.setAttribute("type", "radio");
+inpRb6.setAttribute("id", "rb6");
+inpRb6.setAttribute("name", "rbnom");
+inpRb6.setAttribute("value", "santamaria");
+inpRb6.setAttribute("required", "required");
+
+//Etiqueta label
+const labelRbNom6 = document.createElement("label");
+labelRbNom6.setAttribute("id", "labelrb6");
+labelRbNom6.setAttribute("for", "rb6");
+labelRbNom6.textContent="C/Santa Maria de la Cabeza 5 (Madrid)";
+
+//Vincular el radio button y label al div
+rowRb6.appendChild(inpRb6);
+rowRb6.appendChild(labelRbNom6);
+
+
+//----RB Opción 3 ----//
+
+//Contenedor de la 3ª opción del RB 2
+const rowRb7 = document.createElement("div");
+rowRb7.classList.add("inline-column");
+r2c2Serv.appendChild(rowRb7);
+
+//Nodos 
+const inpRb7 = document.createElement("input");
+inpRb7.setAttribute("type", "radio");
+inpRb7.setAttribute("id", "rb7");
+inpRb7.setAttribute("name", "cercedilla");
+inpRb7.setAttribute("value", "coach");
+inpRb7.setAttribute("required", "required");
+
+//Etiqueta label
+const labelRbNom7 = document.createElement("label");
+labelRbNom7.setAttribute("id", "labelrb7");
+labelRbNom7.setAttribute("for", "rb7");
+labelRbNom7.textContent="C/Doctor Cañadas (Cercedilla)";
+
+//Vincular el radio button y label al div
+rowRb7.appendChild(inpRb7);
+rowRb7.appendChild(labelRbNom7);
+
+
+//----RB Opción 4 ----//
+
+//Contenedor de la 4ª opción del RB 2
+const rowRb8 = document.createElement("div");
+rowRb8.classList.add("inline-column");
+r2c2Serv.appendChild(rowRb8);
+
+//Nodos 
+const inpRb8 = document.createElement("input");
+inpRb8.setAttribute("type", "radio");
+inpRb8.setAttribute("id", "rb4");
+inpRb8.setAttribute("name", "rbnom");
+inpRb8.setAttribute("value", "alcorcón");
+inpRb8.setAttribute("required", "required");
+
+//Etiqueta label
+const labelRbNom8 = document.createElement("label");
+labelRbNom8.setAttribute("id", "labelrb8");
+labelRbNom8.setAttribute("for", "rb8");
+labelRbNom8.textContent="C/Guindales 7 (Alcorcón";
+
+//Vincular el radio button y label al div
+rowRb8.appendChild(inpRb8);
+rowRb8.appendChild(labelRbNom8);
+
+
+
+
+/*
+========================================== Creación de la sección Cita ==========================================
+*/
+
+ 
+//leyenda de la sección Cita
+const leyendaCita = document.createElement("legend");
+leyendaCita.textContent = "¿Qué franja horaria te viene mejor para tu cita? ";
+fieldsetCita.appendChild(leyendaCita);
+
+//primera fila (div para formato)
+const row1Cit = document.createElement("div");
+row1Cit.classList.add("fieldset-row");
+fieldsetCita.appendChild(row1Cit);
+
+//primera columna(div para formato)
+const r1c1Cit = document.createElement("div");
+r1c1Cit.classList.add("fieldset-column");
+row1Cit.appendChild(r1c1Cit);
+
+
+/*------------------/
+/------SELECT-------/
+/------------------*/
+
+// Seleccionador de la cita
+const labelSelect = document.createElement("label");
+labelSelect.setAttribute("for", "cita");
+labelSelect.textContent = "Selecciona la franja que se adecúe más a tu horario:";
+r1c1Cit.appendChild(labelSelect);
+
+const selectCita = document.createElement("select");
+selectCita.setAttribute("name", "cita");
+selectCita.setAttribute("id", "cita");
+selectCita.setAttribute("required", "required");
+r1c1Cit.appendChild(selectCita);
+
+// Opciones del Select
+const placeholder = document.createElement("option");
+placeholder.setAttribute("value", "");
+placeholder.textContent = "Selecciona un horario";
+
+const opcionA = document.createElement("option");
+opcionA.setAttribute("value", "res1");
+opcionA.textContent = "De 9:00 a 11:00";
+
+const opcionB = document.createElement("option");
+opcionB.setAttribute("value", "res2");
+opcionB.textContent = "De 11:30 a 14:00";
+
+const opcionC = document.createElement("option");
+opcionC.setAttribute("value", "res3");
+opcionC.textContent = "De 16:00 a 18:00";
+
+const opcionD = document.createElement("option");
+opcionD.setAttribute("value", "res4");
+opcionD.textContent = "De 18:00 a 21:00";
+
+selectCita.appendChild(placeholder);
+selectCita.appendChild(opcionA);
+selectCita.appendChild(opcionB);
+selectCita.appendChild(opcionC);
+selectCita.appendChild(opcionD);
+
