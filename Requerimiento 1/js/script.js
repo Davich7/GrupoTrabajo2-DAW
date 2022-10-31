@@ -2,8 +2,9 @@
  * Generacion de un formulario solo con javaScript
  */
 
+
 /*
-============ creacion de la estructura general del formulario ============ 
+=================================== creacion de la estructura general del formulario ====================================== 
 */
 const mainDiv = document.querySelector(".container");
 
@@ -36,10 +37,10 @@ const fieldsetCita = document.createElement("fieldset");
 fieldsetCita.setAttribute("id", "cita");
 fieldsetGeneral.appendChild(fieldsetCita);
 
-//fieldset de feedback ¿Cómo nos has conocido?
-const fieldsetFeedBack = document.createElement("fieldset");
-fieldsetFeedBack.setAttribute("id", "feedBack");
-fieldsetGeneral.appendChild(fieldsetFeedBack);
+//fieldset para la subscripción al newsletter
+const fieldsetNewsLetter = document.createElement("fieldset");
+fieldsetNewsLetter.setAttribute("id", "newsletter");
+fieldsetGeneral.appendChild(fieldsetNewsLetter);
 
 //fieldset de los botones de Submit
 const fieldsetAcciones = document.createElement("fieldset");
@@ -173,13 +174,13 @@ const labelCon2 = document.createElement("label");
 
 labelCon2.setAttribute("id", "labelCon2");
 labelCon2.setAttribute("for", "ConText2");
-labelCon2.textContent = "Dirección   ";
+labelCon2.textContent = "Correo electrónico";
 
 // Input de la 2º caja de texto
 const inpCon2 = document.createElement("input");
 inpCon2.setAttribute("type", "Text");
 inpCon2.setAttribute("id", "ConText2");
-inpCon2.setAttribute("placeholder", "Dirección");
+inpCon2.setAttribute("placeholder", "Correo electrónico");
 inpCon2.setAttribute("required", "true");
 
 rowCon2.appendChild(labelCon2);
@@ -204,7 +205,7 @@ labelCon4.textContent = "Teléfono ";
 const inpCon4 = document.createElement("input");
 inpCon4.setAttribute("type", "Text");
 inpCon4.setAttribute("id", "ConText4");
-inpCon4.setAttribute("placeholder", "Telefono");
+inpCon4.setAttribute("placeholder", "Teléfono");
 inpCon4.setAttribute("required", "true");
 
 rowCon4.appendChild(labelCon4);
@@ -293,7 +294,7 @@ inpRb2.setAttribute("required", "required");
 const labelRbTipo2 = document.createElement("label");
 labelRbTipo2.setAttribute("id", "labelrb2");
 labelRbTipo2.setAttribute("for", "rb2");
-labelRbTipo2.textContent="Terapia Cognitivo Conductual";
+labelRbTipo2.textContent="Terapia con piscólogo";
 
 //Vincular el radio button y label al div
 rowRb2.appendChild(inpRb2);
@@ -345,7 +346,7 @@ inpRb4.setAttribute("required", "required");
 const labelRbTipo4 = document.createElement("label");
 labelRbTipo4.setAttribute("id", "labelrb4");
 labelRbTipo4.setAttribute("for", "rb4");
-labelRbTipo4.textContent="Cita con Psiquiatra";
+labelRbTipo4.textContent="Cita con psiquiatra";
 
 //Vincular el radio button y label al div
 rowRb4.appendChild(inpRb4);
@@ -503,7 +504,7 @@ inpRb8.setAttribute("required", "required");
 const labelRbNom8 = document.createElement("label");
 labelRbNom8.setAttribute("id", "labelrb8");
 labelRbNom8.setAttribute("for", "rb8");
-labelRbNom8.textContent="C/Guindales 7 (Alcorcón";
+labelRbNom8.textContent="C/Guindales 7 (Alcorcón)";
 
 //Vincular el radio button y label al div
 rowRb8.appendChild(inpRb8);
@@ -519,7 +520,7 @@ rowRb8.appendChild(labelRbNom8);
  
 //leyenda de la sección Cita
 const leyendaCita = document.createElement("legend");
-leyendaCita.textContent = "¿Qué franja horaria te viene mejor para tu cita? ";
+leyendaCita.textContent = " ¿Cuando quieres tener tu cita? ";
 fieldsetCita.appendChild(leyendaCita);
 
 //primera fila (div para formato)
@@ -576,3 +577,246 @@ selectCita.appendChild(opcionB);
 selectCita.appendChild(opcionC);
 selectCita.appendChild(opcionD);
 
+
+/*----------------------/
+/-------TEXTAREA--------/
+/----------------------*/
+
+//Segunda fila 
+const row2Cit = document.createElement("div");
+row2Cit.classList.add("fieldset-row");
+fieldsetCita.appendChild(row2Cit);
+
+//primera columna(div para formato)
+const r2c1Cit = document.createElement("div");
+r2c1Cit.classList.add("fieldset-column");
+row2Cit.appendChild(r2c1Cit);
+
+//Label del textarea
+const labelText = document.createElement("label");
+labelText.setAttribute("for", "textArea");
+labelText.textContent = "¿Algun comentario que quieras añadir sobre tu cita? ";
+r2c1Cit.appendChild(labelText);
+
+//Creación del textarea
+const inpText = document.createElement("textarea");
+inpText.setAttribute("id", "textArea");
+inpText.setAttribute("cols", 40);
+inpText.setAttribute("rows", 1)
+inpText.setAttribute("placeholder", "Escribe aquí:");
+
+r2c1Cit.appendChild(inpText);
+
+
+/*
+========================================== Creación de la sección Newsletter ==========================================
+*/
+
+
+//leyenda de la sección Newsletter
+const leyendaNewsLetter = document.createElement("legend");
+leyendaNewsLetter.textContent = "¿Te gustaría substribirte a nuestro Newsletter?";
+fieldsetNewsLetter.appendChild(leyendaNewsLetter);
+
+/*----------------------/
+/-------CheckBox--------/
+/----------------------*/
+
+// div de la 1ª fila que contiene las el checkbox para el newsletter
+const row1New = document.createElement("div");
+row1New.classList.add("fieldset-row");
+fieldsetNewsLetter.appendChild(row1New);
+
+
+
+// div de la 1ª columna donde irán las opciones
+const r1c1New = document.createElement("div");
+r1c1New.classList.add("fieldset-column");
+row1New.appendChild(r1c1New);
+
+// Nodos de la etiqueta label (ingredientes)
+const labelCheckbox = document.createElement("label");
+labelCheckbox.textContent = "¿Qué contenido quieres recibir?";
+r1c1New.appendChild(labelCheckbox);
+
+// Contenedor del 1er Checkbox
+const rowCbox1 = document.createElement("div");
+rowCbox1.classList.add("inline-column");
+r1c1New.appendChild(rowCbox1);
+
+// Nodos del 1er Checkbox
+const inpCbox1 = document.createElement("input");
+inpCbox1.setAttribute("type", "checkbox");
+inpCbox1.setAttribute("id", "cbox1");
+inpCbox1.setAttribute("value", "ofertas");
+
+//etiqueta label para el checkbox
+const labelCbox1 = document.createElement("label");
+labelCbox1.setAttribute("id", "labelcbox1");
+labelCbox1.setAttribute("for", "cbox1");
+labelCbox1.textContent = "Avisos sobre ofertas y descuentos";
+
+//Vincular el checkbox y label al div
+rowCbox1.appendChild(inpCbox1);
+rowCbox1.appendChild(labelCbox1);
+
+
+
+// Contenedor del 3er Checkbox
+const rowCbox3 = document.createElement("div");
+rowCbox3.classList.add("inline-column");
+r1c1New.appendChild(rowCbox3);
+// Nodos del 3er Checkbox
+const inpCbox3 = document.createElement("input");
+inpCbox3.setAttribute("type", "checkbox");
+inpCbox3.setAttribute("id", "cbox3");
+inpCbox3.setAttribute("value", "noticias");
+//etiqueta label para el checkbox
+const labelCbox3 = document.createElement("label");
+labelCbox3.setAttribute("id", "labelcbox3");
+labelCbox3.setAttribute("for", "cbox3");
+labelCbox3.textContent = "Noticias sobre Salud Mental";
+//Vincular el checkbox y label al div
+rowCbox3.appendChild(inpCbox3);
+rowCbox3.appendChild(labelCbox3);
+
+
+// Contenedor del 5º Checkbox (inline)
+const rowCbox5 = document.createElement("div");
+rowCbox5.classList.add("inline-column");
+r1c1New.appendChild(rowCbox5);
+// Nodos del 5º Checkbox
+const inpCbox5 = document.createElement("input");
+inpCbox5.setAttribute("type", "checkbox");
+inpCbox5.setAttribute("id", "cbox5");
+inpCbox5.setAttribute("value", "talleres");
+//etiqueta label para el checkbox
+const labelCbox5 = document.createElement("label");
+labelCbox5.setAttribute("id", "labelcbox5");
+labelCbox5.setAttribute("for", "cbox5");
+labelCbox5.textContent = "Alterta de nuevos talleres y actividades";
+//Vincular el checkbox y label al div
+rowCbox5.appendChild(inpCbox5);
+rowCbox5.appendChild(labelCbox5);
+
+
+// div de la 2ª columna donde irán las demás opciones
+const r1c2New = document.createElement("div");
+r1c2New.classList.add("fieldset-column");
+row1New.appendChild(r1c2New);
+
+// Contenedor del 2º Checkbox
+const rowCbox2 = document.createElement("div");
+rowCbox2.classList.add("inline-column");
+r1c2New.appendChild(rowCbox2);
+// Nodos del 2º Checkbox
+const inpCbox2 = document.createElement("input");
+inpCbox2.setAttribute("type", "checkbox");
+inpCbox2.setAttribute("id", "cbox2");
+inpCbox2.setAttribute("value", "cursos");
+//etiqueta label para el checkbox
+const labelCbox2 = document.createElement("label");
+labelCbox2.setAttribute("id", "labelcbox2");
+labelCbox2.setAttribute("for", "cbox2");
+labelCbox2.textContent = "Información sobre cursos";
+//Vincular el checkbox y label al div
+rowCbox2.appendChild(inpCbox2);
+rowCbox2.appendChild(labelCbox2);
+
+
+
+// Contenedor del 4º Checkbox
+const rowCbox4 = document.createElement("div");
+rowCbox4.classList.add("inline-column");
+r1c2New.appendChild(rowCbox4);
+// Nodos del 4º Checkbox
+const inpCbox4 = document.createElement("input");
+inpCbox4.setAttribute("type", "checkbox");
+inpCbox4.setAttribute("id", "cbox4");
+inpCbox4.setAttribute("value", "podcast");
+//etiqueta label para el checkbox
+const labelCbox4 = document.createElement("label");
+labelCbox4.setAttribute("id", "labelcbox4");
+labelCbox4.setAttribute("for", "cbox4");
+labelCbox4.textContent = "Actualización de nuestro podcast";
+//Vincular el checkbox y label al div
+rowCbox4.appendChild(inpCbox4);
+rowCbox4.appendChild(labelCbox4);
+
+
+
+
+//Sección términos y condiciones
+
+
+// div de la 1ª fila donde irá la tercera imagen 
+const row2New = document.createElement("div");
+row2New.classList.add("fieldset-row");
+fieldsetNewsLetter.appendChild(row2New);
+
+
+// div de la 1ª columna para formato
+const r2c1New = document.createElement("div");
+r2c1New.classList.add("fieldset-column");
+row2New.appendChild(r2c1New);
+
+
+//Nodo de la img
+const img3 = document.createElement("img");
+img3.setAttribute("alt", "newsletter_llegando_a_pc");
+img3.src = "images/newsletter.jpg";
+img3.width = "200";
+//Vincular la img al div
+r2c1New.appendChild(img3);
+
+
+//div de la 2º columna que contiene el checkbox de términos y condiciones
+const r2c2New = document.createElement("div");
+r2c2New.classList.add("fieldset-column");
+row2New.appendChild(r2c2New);
+
+//checkbox terminos y condiciones
+const terminos = document.createElement("input");
+terminos.setAttribute("type", "checkbox");
+terminos.setAttribute("name", "terminos");
+terminos.setAttribute("id", "terminos");
+terminos.setAttribute("value", "s");
+terminos.setAttribute("required", "required");
+r2c2New.appendChild(terminos);
+
+const labelTerminos = document.createElement("label");
+labelTerminos.setAttribute("for", "terminos");
+labelTerminos.textContent = "Acepto los términos y condiciones";
+r2c2New.appendChild(labelTerminos);
+
+
+/*
+=============================================== validación del formulario ================================================ 
+*/
+
+//boton de envio
+const submit = document.createElement("button");
+submit.setAttribute("type", "submit");
+submit.setAttribute("name", "submit");
+submit.setAttribute("id", "submit");
+submit.textContent = "Enviar";
+submit.classList.add("cta");
+fieldsetAcciones.appendChild(submit);
+
+//boton de reseteo
+const reset = document.createElement("button");
+reset.setAttribute("type", "reset");
+reset.setAttribute("name", "reset");
+reset.setAttribute("id", "reset");
+reset.textContent = "Borrar";
+fieldsetAcciones.appendChild(reset);
+
+/*
+================================================ validación del formulario =============================================== 
+*/
+submit.addEventListener("click", () => {
+  const elementosObligatorios = document.querySelectorAll("[required]")
+  for (let elemento of elementosObligatorios) {
+    elemento.classList.add("validar");
+  }
+});
