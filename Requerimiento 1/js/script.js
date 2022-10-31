@@ -451,7 +451,7 @@ inpRb6.setAttribute("required", "required");
 const labelRbNom6 = document.createElement("label");
 labelRbNom6.setAttribute("id", "labelrb6");
 labelRbNom6.setAttribute("for", "rb6");
-labelRbNom6.textContent="Centro en Santa Maria de la Cabeza 5 (Madrid)";
+labelRbNom6.textContent="C/Santa Maria de la Cabeza 5 (Madrid)";
 
 //Vincular el radio button y label al div
 rowRb6.appendChild(inpRb6);
@@ -477,7 +477,7 @@ inpRb7.setAttribute("required", "required");
 const labelRbNom7 = document.createElement("label");
 labelRbNom7.setAttribute("id", "labelrb7");
 labelRbNom7.setAttribute("for", "rb7");
-labelRbNom7.textContent="Centro en C/Doctor Cañadas (Cercedilla)";
+labelRbNom7.textContent="C/Doctor Cañadas (Cercedilla)";
 
 //Vincular el radio button y label al div
 rowRb7.appendChild(inpRb7);
