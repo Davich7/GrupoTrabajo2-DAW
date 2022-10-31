@@ -209,3 +209,36 @@ inpCon4.setAttribute("required", "true");
 
 rowCon4.appendChild(labelCon4);
 rowCon4.appendChild(inpCon4);
+
+
+
+
+/*
+============ Creación de la sección Servicio ============
+*/
+
+//------ Estructura general de Servicio ------//
+
+
+//Creación de la Leyenda del FieldSet Servicio
+const leyendaServicio = document.createElement("legend");
+leyendaServicio.textContent = "¿Para que servicio quieres pedir cita?";
+fieldsetServicio.appendChild(leyendaServicio);
+
+
+
+//-------- 1º fila ------//
+// div de la 1ª fila de las diversas opciones de pizza
+const row1Serv = document.createElement("div");
+row1Serv.classList.add("fieldset-row");
+fieldsetServicio.appendChild(row1Serv);
+
+
+
+
+
+
+// div de la 2ª fila de las diversas opciones de pizza
+const row2Serv = document.createElement("div");
+row2Serv.classList.add("fieldset-row");
+fieldsetServicio.appendChild(row2Serv);
