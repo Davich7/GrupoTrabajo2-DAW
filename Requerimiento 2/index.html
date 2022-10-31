@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-cale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png" />
+  <title>Pizza Lista</title>
+  <link rel="stylesheet" href="/css/style.css" />v
+  <script type="text/javascript" src="/js/script.js"></script><!-- Enlazamos el archivo .js en el que hemos desarollado todo el script de la actividad-->
+</head>
+
+<body>
+  <div class="container"><!-- Creamos el contendor principal que contendrá todo nuestros elementos html-->
+    <header>
+      <img src="images/logo.png" alt="logo" /> <!-- Cremos un header e incluimos el logo-->
+    </header>
+
+    <nav> <!-- Creamos un menu de navegación aunque en este acso no redirigen a ningún sitio-->
+      <a href="#">HOME</a>
+      <a href="#">MENU</a>
+      <a href="#">PIDE ONLINE</a>
+      <a href="#">CONTACTO</a>
+    </nav>
+
+    <main> <!-- Creamos un main-->
+      <form id="formulario" class="formulario" action="" method="post"> <!--Creamos nuestro formulario y de le damos un id para poder acceder directamente a él-->
+        <fieldset id="bloque_1"> <!-- Creamos un primer bloque para los datos personales-->
+          <legend id="datos">Datos personales</legend> 
+
+          <div class="datos_personales">
+            <p>Nombre:<input class="input" type="text" name="nombre" id="nombre" placeholder="Nombre y Apellidos" /></p> <!-- Creamos un input para el Nombre, le dadmeos un id  para acceder, y un placeholder-->
+            <p>Dirección:<input class="input" type="text" name="direccion" id="direccion" placeholder="Calle, número y piso"/></p> <!-- Creamos un input para dirección, su id y una clase -->
+            <p>Teléfono:<input class="input" type="text" name="telefono" id="telefono" placeholder="Teléfono fijo o movil"/></p><!-- Input para telefono-->
+            <p>Email:<input class="input" type="text" name="email" id="email" placeholder="email@email.com"/></p><!-- y un último input para email -->
+          </div>
+        </fieldset>
+
+        <fieldset id="bloque_2"><!-- Creamos un segundo bloque para contener los botones tipo radio-->
+          <legend id="tamano">Elige el tamaño de tu pizza</legend>
+
+          <ul>
+            <input type="radio" value="5" name="tamaño" id="pequena" />Pequeña - 5€<br /> <!-- A cada botón, le asignamos el mismo "name" y en los valores, ponemos los precios de cada tamaño-->
+            <input type="radio" value="10" name="tamaño" id="mediana" />Mediana - 10€<br />
+            <input type="radio" value="15" name="tamaño" id="grande" />Grande - 15€<br />
+          </ul>
+        </fieldset>
+
+        <fieldset id="bloque_3"><!--  Creamos el tercer bloque para los botones check-->
+          <legend id="ingredientes">Elige los ingredientes</legend>
+
+          <ul>
+            <input type="checkbox" value="1" name="ingrediente" id="ingrediente1" class="ingrediente" />Extra mozzarella - 1€<br /><!-- al igual que en los botones radio, le damos el valor del precio de cada ingrediente  y mismo name para acceder al todos ellos -->
+            <input type="checkbox" value="1" name="ingrediente" id="ingrediente2" class="ingrediente" />JamónYork - 1€<br />
+            <input type="checkbox" value="1" name="ingrediente" id="ingrediente3" class="ingrediente" />Peperoni - 1€<br />
+            <input type="checkbox" value="1" name="ingrediente" id="ingrediente4" class="ingrediente" />Champiñones - 1€<br />
+          </ul>
+        </fieldset>
+
+        <input type="submit" value="Enviar pedido" class="boton" /> <!-- Creamos el boón submit con el que se iniciará el proceso de validación del script-->
+        <input type="reset" value="Borrar datos" class="boton" /><!--Creamos un botón para borrar los datos introducidos-->
+      </form>
+    </main>
+
+    <footer>
+      <p class="footer_text">
+        RicoPizza -  C/ Robledales s/n, Madrid -
+        Copyright 2022 ©
+      </p>
+    </footer>
+  </div>
+</body>
+
+</html>
