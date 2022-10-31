@@ -228,17 +228,34 @@ fieldsetServicio.appendChild(leyendaServicio);
 
 
 //-------- 1º fila ------//
-// div de la 1ª fila de las diversas opciones de pizza
+// div de la 1ª fila donde situaremos los radioButtons para elegir el tipo de Servicio
 const row1Serv = document.createElement("div");
 row1Serv.classList.add("fieldset-row");
 fieldsetServicio.appendChild(row1Serv);
 
+// div de la columna donde irán los servicios a elegir
+const r1c1Serv = document.createElement("div");
+r1c1Serv.classList.add("fieldset-column");
+row1Serv.appendChild(r1c1Serv);
+
+// Nodos de la etiqueta label (Tipos de servicio)
+const labelRbTipo = document.createElement("label");
+labelRbTipo.textContent = "Elige el tipo de servicio";
+r1c1Serv.appendChild(labelRbTipo);
 
 
-
-
-
-// div de la 2ª fila de las diversas opciones de pizza
+//-------- 2º fila ------//
+// div de la 2ª fila de las 
 const row2Serv = document.createElement("div");
 row2Serv.classList.add("fieldset-row");
 fieldsetServicio.appendChild(row2Serv);
+
+// div de la columna donde irán los centros a elegir
+const r2c1Serv = document.createElement("div");
+r2c1Serv.classList.add("fieldset-column");
+row2Serv.appendChild(r2c1Serv);
+
+// Nodos de la etiqueta label con los centros a elegir
+const labelRbNom = document.createElement("label");
+labelRbNom.textContent = "Elige un centro para la cita";
+r2c1Serv.appendChild(labelRbNom);
