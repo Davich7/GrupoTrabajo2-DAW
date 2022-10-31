@@ -1,25 +1,133 @@
-* {
+html{
+    height: 100%;
+}
+body{
+    background-color:#3d363d;
+    background-image: url(imagenes/pizza1.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.container{
+    width: 1024px;
+    margin-left:auto ;
+    margin-right:auto ;
+}
+header{
+    height: 118px;
+    text-align: center; 
+}
+nav{
+    background-color: rgba(26, 26, 26, 0.35);
+    height: 30px;
+    text-align: center;
+    padding-top: 14px;   
+}
+main{
+    text-align: center;
+    padding-top:80px ;
+    padding-left: 240px ;
+    padding-right: 240px;
+}
+footer{
+    background-color: rgba(34, 33, 33, 0.55);
+    height: 50px;
+    /*width: 1024px;*/
+    margin-top: 50px;
+    padding-top:30px ;
+    padding-bottom: 30px;
+    padding-left: 240px ;
+    padding-right: 240px;
+    text-align: center;
+}
+.footer_text{
+    color: white;
+    font-size: 14px;  
+}
+h1{
+    font-size: 84px;
+    color: white;
+    font-family: Georgia, sans-serif, Arial;   
+}
+p.nav{
+    font-size: 21px;
+    color: white;
+    font-family: Georgia, sans-serif, Arial;
+}
+a{
+    color: white;
+    font-family:Georgia, sans-serif, Arial ;
+}
+nav a{
+    text-decoration: none;
+    font-size: 14px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+form{
+    font-size: 18px;
+    color: rgba(255, 248, 190, 0.945);
+    font-family: Georgia, sans-serif, Arial;
+    background-color:  rgba(0, 0, 0, 0.550);
+    border-radius: 5px;
+    border-color: rgba(255, 248, 190, 0.945);
+    text-align: left;
+}
+
+
+
+ul{
+    text-align: justify;
+    
+}
+
+div.datos_personales{
+    text-align: center;
+    
+}
+   input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display:block;
+    border: 1px solid rgb(252, 248, 248);
+    border-radius: 4px;
     box-sizing: border-box;
   }
-  
-  body {
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+ 
+  input[type=submit] {
+    font-size:16px;
+    font-family: Georgia, sans-serif, Arial;
+    border:0px;
+    border-radius: 3px;
+    width:100px;
+    width: 100%;
+    background-color: #2524249f;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
   }
-  
-  form {
-      width: 80%;
-      max-width: 60rem;
-      margin: 1rem auto
+  input[type=reset] {
+    font-size:18px;
+    font-family: Georgia, sans-serif, Arial;
+    border:0px;
+    border-radius: 3px;
+    width:100px; 
+    width: 100%;
+    background-color: #0a0a0a9f;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
   }
-  
-  fieldset {
-      width: 80%;
-      margin: 2rem auto;
-      border: none;
-      border-bottom: 1px solid #24cbd3;
-      padding-bottom: 2rem;
+  input[type=submit]:hover {
+    background-color: #363636be;
   }
-  
-  form fieldset:first-child {
-      border: 2px solid purple;
+  input[type=reset]:hover {
+    background-color: #2e2d2dbe;
   }
