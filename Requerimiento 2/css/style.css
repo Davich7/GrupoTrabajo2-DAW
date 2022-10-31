@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+  }
+  
+  form {
+      width: 80%;
+      max-width: 60rem;
+      margin: 1rem auto
+  }
+  
+  fieldset {
+      width: 80%;
+      margin: 2rem auto;
+      border: none;
+      border-bottom: 1px solid #24cbd3;
+      padding-bottom: 2rem;
+  }
+  
+  form fieldset:first-child {
+      border: 2px solid purple;
+  }

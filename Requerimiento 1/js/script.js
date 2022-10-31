@@ -51,51 +51,60 @@ fieldsetGeneral.appendChild(fieldsetAcciones);
 ============ Creación de la sección Datos Personales ============
 */
 
+
+//---Primer contenedor general--//
+
+/* Crearemos primero los contenedores de la columna izquierda y luego la derecha. 
+*  Con un poco de css los situaremos
+*/
+
+
 //Creación de la Leyenda del FieldSet Contacto
 const leyendaContacto = document.createElement("legend");
 leyendaContacto.textContent = "Tus datos de contacto";
 fieldsetContacto.appendChild(leyendaContacto);
 
-// div de la 1ª fila
+// div de la 1ª fila que servirá de contenedor general
 const row1Con = document.createElement("div");
 row1Con.classList.add("fieldset-row");
 fieldsetContacto.appendChild(row1Con);
 
-// div de la 1ª columna
+// div de la 1ª columna que contendrá DNI, Nombre y Apellidos
 const r1c1Con = document.createElement("div");
 r1c1Con.classList.add("fieldset-column");
 row1Con.appendChild(r1c1Con);
 
-// Label de la 1ª columna
+// Label de la 1ª columna que servirá de label para todos los datos
 const labelContacto = document.createElement("label");
 labelContacto.textContent = "Introduce tus datos:";
 r1c1Con.appendChild(labelContacto);
 
+
+//---DNI---//
 
 // Contenedor de la 1ª caja de texto
 const rowCon1 = document.createElement("div");
 rowCon1.classList.add("inline-column");
 r1c1Con.appendChild(rowCon1);
 
-
-
-
 // Label de la 1º caja de texto
 const labelCon1 = document.createElement("label");
 labelCon1.setAttribute("id", "labelCon1");
 labelCon1.setAttribute("for", "ConText1");
-labelCon1.textContent = "Nombre ";
+labelCon1.textContent = "DNI ";
 
 // Input de la 1º caja de texto
 const inpCon1 = document.createElement("input");
 inpCon1.setAttribute("type", "Text");
 inpCon1.setAttribute("id", "ConText1");
-inpCon1.setAttribute("placeholder", "Nombre");
+inpCon1.setAttribute("placeholder", "DNI");
 inpCon1.setAttribute("required", "true");
 
 rowCon1.appendChild(labelCon1);
 rowCon1.appendChild(inpCon1);
 
+
+//---Nombre---//
 
 // Contenedor de la 3ª caja de texto
 const rowCon3 = document.createElement("div");
@@ -106,24 +115,53 @@ r1c1Con.appendChild(rowCon3);
 const labelCon3 = document.createElement("label");
 labelCon3.setAttribute("id", "labelCon3");
 labelCon3.setAttribute("for", "ConText3");
-labelCon3.textContent = "Apellidos ";
+labelCon3.textContent = "Nombre ";
 
 // Input de la 3º caja de texto
 const inpCon3 = document.createElement("input");
 inpCon3.setAttribute("type", "Text");
 inpCon3.setAttribute("id", "ConText3");
-inpCon3.setAttribute("placeholder", "Apellidos");
+inpCon3.setAttribute("placeholder", "Nombre");
 inpCon3.setAttribute("required", "true");
 
 rowCon3.appendChild(labelCon3);
 rowCon3.appendChild(inpCon3);
 
 
+//---Apellidos---//
+
+// Contenedor de la 5ª caja de texto
+const rowCon5 = document.createElement("div");
+rowCon5.classList.add("inline-column");
+r1c1Con.appendChild(rowCon5);
+
+// Label de la 5º caja de texto
+const labelCon5 = document.createElement("label");
+labelCon5.setAttribute("id", "labelCon5");
+labelCon5.setAttribute("for", "ConText5");
+labelCon5.textContent = "Apellidos ";
+
+// Input de la 5º caja de texto
+const inpCon5 = document.createElement("input");
+inpCon5.setAttribute("type", "Text");
+inpCon5.setAttribute("id", "ConText5");
+inpCon5.setAttribute("placeholder", "Apellidos");
+inpCon5.setAttribute("required", "true");
+
+rowCon5.appendChild(labelCon5);
+rowCon5.appendChild(inpCon5);
+
+
+
+
+//El segundo div contendrá la dirección y el teléfoto
 
 // div de la 2ª columna
 const r2c2Con = document.createElement("div");
 r2c2Con.classList.add("fieldset-column");
 row1Con.appendChild(r2c2Con);
+
+//----- Dirección ------//
 
 //Contenedor de la segunda caja de texto
 const rowCon2 = document.createElement("div");
@@ -148,6 +186,7 @@ rowCon2.appendChild(labelCon2);
 rowCon2.appendChild(inpCon2);
 
 
+//----- Teléfono ------//
 
 ////Contenedor de la 4ª caja de texto
 const rowCon4 = document.createElement("div");
@@ -170,27 +209,3 @@ inpCon4.setAttribute("required", "true");
 
 rowCon4.appendChild(labelCon4);
 rowCon4.appendChild(inpCon4);
-
-
-////Contenedor de la 6ª caja de texto
-const rowCon6 = document.createElement("div");
-rowCon6.classList.add("inline-column");
-r2c2Con.appendChild(rowCon6);
-
-//// Label de la 6º caja de texto
-const labelCon6 = document.createElement("label");
-labelCon6.setAttribute("id", "labelCon6");
-labelCon6.setAttribute("for", "ConText6");
-labelCon6.textContent = "DNI ";
-
-
-// Input de la 6º caja de texto
-const inpCon6 = document.createElement("input");
-inpCon6.setAttribute("type", "Text");
-inpCon6.setAttribute("id", "ConText6");
-inpCon6.setAttribute("placeholder", "DNI");
-inpCon6.setAttribute("required", "true");
-
-rowCon6.appendChild(labelCon6);
-rowCon6.appendChild(inpCon6);
-
