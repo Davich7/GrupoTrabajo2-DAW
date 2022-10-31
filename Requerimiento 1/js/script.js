@@ -48,7 +48,7 @@ fieldsetGeneral.appendChild(fieldsetAcciones);
 
 
 /*
-============ Creación de la sección Datos Personales ============
+======================================= Creación de la sección Datos Personales ==========================================
 */
 
 
@@ -214,7 +214,7 @@ rowCon4.appendChild(inpCon4);
 
 
 /*
-============ Creación de la sección Servicio ============
+========================================== Creación de la sección Servicio ==========================================
 */
 
 //------ Estructura general de Servicio ------//
@@ -511,4 +511,68 @@ rowRb8.appendChild(labelRbNom8);
 
 
 
+
+/*
+========================================== Creación de la sección Cita ==========================================
+*/
+
+ 
+//leyenda de la sección Cita
+const leyendaCita = document.createElement("legend");
+leyendaCita.textContent = "¿Qué franja horaria te viene mejor para tu cita? ";
+fieldsetCita.appendChild(leyendaCita);
+
+//primera fila (div para formato)
+const row1Cit = document.createElement("div");
+row1Cit.classList.add("fieldset-row");
+fieldsetCita.appendChild(row1Cit);
+
+//primera columna(div para formato)
+const r1c1Cit = document.createElement("div");
+r1c1Cit.classList.add("fieldset-column");
+row1Cit.appendChild(r1c1Cit);
+
+
+/*------------------/
+/------SELECT-------/
+/------------------*/
+
+// Seleccionador de la cita
+const labelSelect = document.createElement("label");
+labelSelect.setAttribute("for", "cita");
+labelSelect.textContent = "Selecciona la franja que se adecúe más a tu horario:";
+r1c1Cit.appendChild(labelSelect);
+
+const selectCita = document.createElement("select");
+selectCita.setAttribute("name", "cita");
+selectCita.setAttribute("id", "cita");
+selectCita.setAttribute("required", "required");
+r1c1Cit.appendChild(selectCita);
+
+// Opciones del Select
+const placeholder = document.createElement("option");
+placeholder.setAttribute("value", "");
+placeholder.textContent = "Selecciona un horario";
+
+const opcionA = document.createElement("option");
+opcionA.setAttribute("value", "res1");
+opcionA.textContent = "De 9:00 a 11:00";
+
+const opcionB = document.createElement("option");
+opcionB.setAttribute("value", "res2");
+opcionB.textContent = "De 11:30 a 14:00";
+
+const opcionC = document.createElement("option");
+opcionC.setAttribute("value", "res3");
+opcionC.textContent = "De 16:00 a 18:00";
+
+const opcionD = document.createElement("option");
+opcionD.setAttribute("value", "res4");
+opcionD.textContent = "De 18:00 a 21:00";
+
+selectCita.appendChild(placeholder);
+selectCita.appendChild(opcionA);
+selectCita.appendChild(opcionB);
+selectCita.appendChild(opcionC);
+selectCita.appendChild(opcionD);
 
