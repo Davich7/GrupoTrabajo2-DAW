@@ -811,12 +811,62 @@ reset.setAttribute("id", "reset");
 reset.textContent = "Borrar";
 fieldsetAcciones.appendChild(reset);
 
+
+
 /*
 ================================================ validación del formulario =============================================== 
 */
-submit.addEventListener("click", () => {
+
+
+submit.addEventListener("click", validacion);
+
+
+
+function validacion() {
+
+  //Comprobamos si se rellenan los campos con los datos del cliente
+  if (nombre.value.trim() == "") {
+    alert ('¡¡¡ERROR!!! Debe de escribir el nombre del cliente.')
+    return false;
+  }
+
+  if (direccion.value.trim() == "") {
+    alert ('¡¡¡ERROR!!! Debe de escribir la direccion del cliente.')
+    return false;
+  }
+
+  if (telefono.value.trim() == "") {
+    alert ('¡¡¡ERROR!!! Debe de escribir el telefono del cliente.')
+    return false;
+  }
+
+  if (email.value.trim() == "") {
+    alert ('¡¡¡ERROR!!! Debe de escribir el correo electronico del cliente.')
+    return false;
+  }
+
+  //Expresiones para validar los campos del formulario
+  reNombre = /^[A-Z][A-z]+$/
+  if(!nombre.value.match(reNombre)) {
+    alert ('¡¡¡ERROR!!! Formato del nombre incorrecto.')
+    return false;
+  }
+
+  reTelefono = /^\d{9}$/
+  if (!telefono.value.match(reTelefono)) {
+    alert ('¡¡¡ERROR!!! Formato del telefono incorrecto.')
+    return false;
+  }
+
+  reEmail = /^(.+\@.+\..+)$/
+  if (!email.value.match(reEmail)) {
+    alert ('¡¡¡ERROR!!! Formato del correo electronico incorrecto.')
+    return false;
+  }
+
   const elementosObligatorios = document.querySelectorAll("[required]")
   for (let elemento of elementosObligatorios) {
     elemento.classList.add("validar");
-  }
-});
+
+}
+}
