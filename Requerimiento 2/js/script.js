@@ -6,18 +6,18 @@ pasar a la validación del formulario.*/
 window.onload = function () {
   //console.log("¡Quiero mi pizza!");
 
-    //event listeners
-    //validacion del formulario completo
-    submit.addEventListener("click", validarFormulario); 
+  //event listeners
+  //validacion del formulario completo
+  submit.addEventListener("click", validarFormulario); 
 
-    //validacion inmediata de nombre
-    nombre.addEventListener("keyup", validarNombre);
+  //validacion inmediata de nombre
+  nombre.addEventListener("keyup", validarNombre);
 
-    //validacion inmediata de apellidos
-    apellidos.addEventListener("keyup", validarApellidos);
+  //validacion inmediata de apellidos
+  apellidos.addEventListener("keyup", validarApellidos);
 
-    //validacion inmediata de la direccion
-    direccion.addEventListener("keyup", validarDireccion);
+  //validacion inmediata de la direccion
+  direccion.addEventListener("keyup", validarDireccion);
 
   //validacion inmediata del telefono
   telefono.addEventListener("keyup", validarTlf);
@@ -157,7 +157,7 @@ function validarApellidos() {
  * @returns true si el numero de telefono es valido, false si no
  */
 function validarTlf(evento) {
-  const mensajeError = telefono.nextElementSibling;
+  const mensajeErrorTfno = document.querySelector(".telefono-error");
 
   let inputUsuario = telefono.value.replace(/\s/g, ""); //elimina todos los espacios del input
   const patternString = "^\\+346[0-9]{1,8}$";
@@ -178,12 +178,12 @@ function validarTlf(evento) {
   const valido = pattern.test(inputUsuario);
   if (!valido) {
     telefono.classList.add("invalido");
-    mensajeError.textContent =
+    mensajeErrorTfno.textContent =
       "Introduce un telefono movil de 9 digitos con prefijo +34";
   } else {
     if (telefono.classList.contains("invalido"))
       telefono.classList.remove("invalido");
-    mensajeError.textContent = "";
+      mensajeErrorTfno.textContent = "";
   }
 
   return valido;
@@ -253,7 +253,6 @@ function validarDireccion() {
 function validarEmail() {
   //Seleccionamos el primer nodo hijo que deriva del nodo <p> cuya clase es "mensaje-error email-error"
   const mensajeErrorEmail = document.querySelector(".email-error");
-  let valido = false;
 
   /* El primer bloque que va desde el primer caracter hasta el anterior de la "@"
    * debe tener al menos un caracter en minisculas, mayusculas, numerico o un punto, guion o barra baja.
@@ -266,14 +265,8 @@ function validarEmail() {
   let patronEmail = new RegExp(patternEmail);
 
   //En primer lugar, eliminamos cualquier espacio introducido
-  let inputEmail = email.value.split(" ").join("");
-
-  //En segundo lugar, comprobamos que el input cumple con el patron definido
-  if (patronEmail.test(inputEmail) == false) {
-    valido = false;
-  } else {
-    valido = true;
-  }
+  let input = email.value.split(" ").join("");
+  const valido = patronEmail.test(input);
 
   //Validamos el contenido final
 
@@ -300,10 +293,10 @@ function validarEmail() {
 
 function validarMinIngredientes() {
   let valido = false;
-  const mensajeError = document.querySelector("#opciones-pizza p p");
+  const mensajeError = document.querySelector("#opciones-pizza p");
 
   const ingredientesChkboxes = document.querySelectorAll(
-    '#opciones-pizza p p input[type="checkbox"]'
+    '#opciones-pizza input[type="checkbox"]'
   );
   // iteramos por las checkboxes para ver si alguna esta marcada
   // y actualizar el resultado de la validacion

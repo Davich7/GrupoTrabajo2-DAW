@@ -211,6 +211,7 @@ fieldset {
  
   
   .mensaje-error {
+    color: #d60303;
     font-family: "Courier New", Courier, monospace;
     /* font-family: 'Times New Roman', Times, serif; */
     font-size: 0.8rem;
