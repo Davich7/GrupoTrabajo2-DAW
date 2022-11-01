@@ -13,10 +13,168 @@
 </head>
 
 <body>
-  <div class="container"><!-- Creamos el contendor principal que contendrá todo nuestros elementos html-->
+  <!-- Creamos el contendor principal que contendrá todo nuestros elementos html-->
+  <div class="container">
     <header>
       <img src="./images/logo.png" alt="logo" /> <!-- Cremos un header e incluimos el logo-->
     </header>
-</body>
+    <!-- Creamos un menu de navegación sin funcionalidad-->
+    <nav> 
+      <a href="#">Nosotros</a>
+      <a href="#">Nuestras Pizzas</a>
+      <a href="#">Tu pedido</a>
+      <a href="#">Contacto</a>
+    </nav>
+    <!-- Creamos un main-->
+    <main> 
 
+      <!--Creamos el formulario y asignamos una ID para acceder más facilmente-->
+      <form id="formulario" class="formulario" action="#" method="post"> 
+       
+        <!-- Creamos un primer bloque para los datos personales-->
+        <fieldset id="contacto"> 
+          <legend id="datos">Introduce tus datoss</legend> 
+
+          <div class="datos_personales">
+            <div class="fieldset-column">
+
+              <!-- Creamos un input para el Nombre, le dadmeos un id  para acceder, y un placeholder-->
+              <div class="inline-column"><label id="labelCon1" for="nombre">Nombre </label>
+                <input type="Text" id="nombre" placeholder="Nombre" required>
+                <p class="mensaje-error nombre-error"></p>
+              </div>
+
+              <div class="inline-column"><label id="labelCon3" for="apellidos">Apellidos </label>
+                <input type="Text" id="apellidos" placeholder="Apellidos" required>
+                <p class="mensaje-error apellidos-error"></p>
+              </div>
+
+              <div class="inline-column">
+                <label id="labelCon2" for="ConText2">Dirección </label>
+                <input type="Text" id="ConText2" name="direccion" placeholder="Dirección" maxlength="100" required>
+                <p class="mensaje-error direccion-error"></p>
+              </div>
+
+              <div class="inline-column">
+                <label for="telefono">Teléfono </label>
+                <input type="tel" id="telefono" name="telefono" placeholder="Telefono" required>
+                <p class="mensaje-error"></p>
+              </div>
+
+              <div class="inline-column">
+                <label for="email">Email </label>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <p class="mensaje-error email-error"></p>
+              </div>
+
+            </div>
+        </fieldset>
+
+        <!-- Creamos un segundo bloque para contener las opciones donde estarán los Radio Buttons y el Checkbox-->
+        <fieldset id="opciones-pizza">
+          <legend>¿Cómo quieres tu RicoPizza?</legend>
+
+          <!-- Creamos un div para contener los ingredientes-->
+          <div id="ingredientes" class="fieldset-row">
+            <div class="fieldset-column"><label>Elige los ingredientes</label>
+              <div class="inline-column">
+                <input type="checkbox" id="ing-queso" name="queso" value="true">
+                <label for="ing-queso">Mezcla de quesos</label>
+              </div>
+              <div class="inline-column">
+                <input type="checkbox" id="ing-champiniones" name="champiniones" value="true">
+                <label for="ing-champiniones">Champiñones</label>
+              </div>
+              <div class="inline-column">
+                <input type="checkbox" id="ing-bacon" name="bacon" value="true">
+                <label for="ing-bacon">Bacon</label>
+              </div>
+              <div class="inline-column"><input type="checkbox" id="ing-cherry" name="cherry" value="true">
+                <label for="ing-cherry">Tomates cherry</label>
+              </div>
+              <div class="inline-column"><input type="checkbox" id="ing-pollo" name="pollo" value="true">
+                <label for="ing-pollo">Pollo</label>
+              </div>
+              <p class="mensaje-error"></p>
+            </div>
+
+          </div>
+
+          <div id="masa" class="fieldset-row">
+            <div class="fieldset-column">
+  
+              <label>Elige el tipo de masa</label>
+              <div class="inline-column">
+                <input type="radio" name="masa" id="radiobutton1" value="fina" required>
+                <label id="labelrb1" for="radiobutton1">Fina</label>
+              </div>
+              <div class="inline-column">
+                <input type="radio" name="masa" id="radiobutton2" value="normal">
+                <label id="labelrb2" for="radiobutton2">Normal</label>
+              </div>
+              <div class="inline-column">
+                <input type="radio" name="masa" id="radiobutton3" value="extra">
+                <label id="labelrb3" for="radiobutton3">Extra</label>
+              </div>
+              <div class="inline-column">
+                <input type="radio" name="masa" id="radiobutton4" value="extraqueso">
+                <label id="labelrb4" for="radiobutton4">Extra con bordes rellenos de queso</label>
+              </div>
+              <p class="mensaje-error error-masa"></p>
+            </div>
+           
+            <div class="fieldset-column">
+              <label>Elige el tamaño</label>
+              <div class="inline-column">
+                <input type="radio" name="tamanio" id="radiobutton5" value="pequeña" required>
+                <label id="labelrb5" for="radiobutton5">Pequeña</label>
+              </div>
+              <div class="inline-column">
+                <input type="radio" name="tamanio" id="radiobutton6" value="mediana">
+                <label id="labelrb6" for="radiobutton6">Mediana</label>
+              </div>
+              <div class="inline-column">
+                <input type="radio" name="tamanio" id="radiobutton7" value="familiar">
+                <label id="labelrb7" for="radiobutton7">Grande</label>
+              </div>
+              <p class="mensaje-error error-tamanio"></p>
+            </div>
+          
+          </div>
+        </fieldset>
+          <ul>
+            <input type="radio" value="5" name="tamaño" id="pequena" />Pequeña - 5€<br /> <!-- A cada botón, le asignamos el mismo "name" y en los valores, ponemos los precios de cada tamaño-->
+            <input type="radio" value="10" name="tamaño" id="mediana" />Mediana - 10€<br />
+            <input type="radio" value="15" name="tamaño" id="grande" />Grande - 15€<br />
+          </ul>
+
+        </fieldset>
+
+        <fieldset id="bloque_3"><!--  Creamos el tercer bloque para los botones check-->
+          <legend id="ingredientes">Elige los ingredientes</legend>
+
+          <ul>
+            <input type="checkbox" value="1" name="ingrediente" id="ingrediente1" class="ingrediente" />Extra mozzarella - 1€<br /><!-- al igual que en los botones radio, le damos el valor del precio de cada ingrediente  y mismo name para acceder al todos ellos -->
+            <input type="checkbox" value="1" name="ingrediente" id="ingrediente2" class="ingrediente" />JamónYork - 1€<br />
+            <input type="checkbox" value="1" name="ingrediente" id="ingrediente3" class="ingrediente" />Peperoni - 1€<br />
+            <input type="checkbox" value="1" name="ingrediente" id="ingrediente4" class="ingrediente" />Champiñones - 1€<br />
+          </ul>
+        </fieldset>
+
+        <fieldset id="acciones">
+        <p id="info-precio" class="btn"></p>
+        <input type="submit" value="Enviar pedido" class="boton" /> <!-- Creamos el boón submit con el que se iniciará el proceso de validación del script-->
+        <input type="reset" value="Borrar datos" class="boton" /><!--Creamos un botón para borrar los datos introducidos-->
+        </fieldset>
+    </form>
+    </main>
+
+    <footer>
+      <p class="footer_text">
+        Pizza Rica -  C/ Robledales s/n, Madrid -
+        Copyright 2022 ©
+      </p>
+    </footer>
+  </div>
+</body>
 </html>
