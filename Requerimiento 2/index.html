@@ -74,9 +74,9 @@
         <fieldset id="opciones-pizza">
           <legend>¿Cómo quieres tu RicoPizza?</legend>
 
-          <!-- Creamos un div para contener los ingredientes-->
+          <!-- Creamos un div para contener el CheckBox de los ingredientes-->
           <div id="ingredientes" class="fieldset-row">
-            <div class="fieldset-column"><label>Elige los ingredientes</label>
+            <div class="fieldset-column"><label>Elige los ingredientes - 1€ cada uno</label>
               <div class="inline-column">
                 <input type="checkbox" id="ing-queso" name="queso" value="true">
                 <label for="ing-queso">Mezcla de quesos</label>
@@ -100,6 +100,7 @@
 
           </div>
 
+          <!-- Creamos un div para contener los Radio Buttons del tipo de masa y tamaño-->
           <div id="masa" class="fieldset-row">
             <div class="fieldset-column">
   
@@ -122,51 +123,67 @@
               </div>
               <p class="mensaje-error error-masa"></p>
             </div>
-           
+
+           <!-- A cada botón, le asignamos el mismo "name" y en los valores colocamos el valor que pasaremos luego por la función-->
             <div class="fieldset-column">
               <label>Elige el tamaño</label>
               <div class="inline-column">
                 <input type="radio" name="tamanio" id="radiobutton5" value="pequeña" required>
-                <label id="labelrb5" for="radiobutton5">Pequeña</label>
+                <label id="labelrb5" for="radiobutton5">Pequeña - 5€</label>
               </div>
               <div class="inline-column">
                 <input type="radio" name="tamanio" id="radiobutton6" value="mediana">
-                <label id="labelrb6" for="radiobutton6">Mediana</label>
+                <label id="labelrb6" for="radiobutton6">Mediana - 10€</label>
               </div>
               <div class="inline-column">
                 <input type="radio" name="tamanio" id="radiobutton7" value="familiar">
-                <label id="labelrb7" for="radiobutton7">Grande</label>
+                <label id="labelrb7" for="radiobutton7">Grande - 15€</label>
               </div>
               <p class="mensaje-error error-tamanio"></p>
             </div>
-          
           </div>
         </fieldset>
-          <ul>
-            <input type="radio" value="5" name="tamaño" id="pequena" />Pequeña - 5€<br /> <!-- A cada botón, le asignamos el mismo "name" y en los valores, ponemos los precios de cada tamaño-->
-            <input type="radio" value="10" name="tamaño" id="mediana" />Mediana - 10€<br />
-            <input type="radio" value="15" name="tamaño" id="grande" />Grande - 15€<br />
-          </ul>
-
-        </fieldset>
-
-        <fieldset id="bloque_3"><!--  Creamos el tercer bloque para los botones check-->
-          <legend id="ingredientes">Elige los ingredientes</legend>
-
-          <ul>
-            <input type="checkbox" value="1" name="ingrediente" id="ingrediente1" class="ingrediente" />Extra mozzarella - 1€<br /><!-- al igual que en los botones radio, le damos el valor del precio de cada ingrediente  y mismo name para acceder al todos ellos -->
-            <input type="checkbox" value="1" name="ingrediente" id="ingrediente2" class="ingrediente" />JamónYork - 1€<br />
-            <input type="checkbox" value="1" name="ingrediente" id="ingrediente3" class="ingrediente" />Peperoni - 1€<br />
-            <input type="checkbox" value="1" name="ingrediente" id="ingrediente4" class="ingrediente" />Champiñones - 1€<br />
-          </ul>
+  
+        <fieldset id="pedido">
+          <legend>Sobre el pedido</legend>
+          <div class="fieldset-row">
+            <div class="fieldset-column">
+              <label for="restaurante">Elige un restaurante</label>
+              <select name="restaurante" id="restaurante" required>
+                <option value="">Elige un restaurante</option>
+                <option value="res1">La casina de Paulina</option>
+                <option value="res2">Ixchel's Hollywok</option>
+                <option value="res3">PizzalPilpilar</option>
+                <option value="res4">La Pizza Pagana de Jana</option>
+              </select>
+              <label for="textArea">Introduce aquí información sobre alergias u otras notas adicionales:</label>
+              <textarea id="textArea" cols="40" rows="4" placeholder="Escribe aquí:"></textarea>
+            </div>
+            <div class="fieldset-column">
+              <img alt="pizzeria" src="images/pizzeria.jpg" width="300">
+            </div>
+          </div>
+          <div class="fieldset-row">
+            <div class="fieldset-column inline-column">
+              <input type="checkbox" name="terminos" id="terminos" value="true" required>
+              <label for="terminos">Acepto los términos y condiciones</label>
+            </div>
+            <div class="fieldset-column">
+              <p class="mensaje-error terminos__error"></p>
+            </div>
+          </div>
         </fieldset>
 
         <fieldset id="acciones">
-        <p id="info-precio" class="btn"></p>
-        <input type="submit" value="Enviar pedido" class="boton" /> <!-- Creamos el boón submit con el que se iniciará el proceso de validación del script-->
-        <input type="reset" value="Borrar datos" class="boton" /><!--Creamos un botón para borrar los datos introducidos-->
+          <!-- Creamos el parrafo que mostrará el precio de la pizza según lo que seleccionemos -->
+          <p id="info-precio" class="btn"></p>
+          <!-- Creamos el boón submit con el que se iniciará el proceso de validación del script-->
+          <button type="submit" name="submit" id="submit" class="cta">Realizar Pedido</button>
+          <!--Creamos un botón para borrar los datos introducidos-->
+          <button type="reset" name="reset" id="reset">Borrar formulario</button>
         </fieldset>
-    </form>
+      
+      </form>
     </main>
 
     <footer>
@@ -175,6 +192,8 @@
         Copyright 2022 ©
       </p>
     </footer>
+
   </div>
 </body>
+
 </html>
