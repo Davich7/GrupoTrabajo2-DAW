@@ -91,13 +91,13 @@ r1c1Con.appendChild(rowCon1);
 // Label de la 1º caja de texto
 const labelCon1 = document.createElement("label");
 labelCon1.setAttribute("id", "labelCon1");
-labelCon1.setAttribute("for", "ConText1");
+labelCon1.setAttribute("for", "dni");
 labelCon1.textContent = "DNI ";
 
 // Input de la 1º caja de texto
 const inpCon1 = document.createElement("input");
 inpCon1.setAttribute("type", "Text");
-inpCon1.setAttribute("id", "ConText1");
+inpCon1.setAttribute("id", "dni");
 inpCon1.setAttribute("placeholder", "DNI");
 inpCon1.setAttribute("required", "true");
 
@@ -115,13 +115,13 @@ r1c1Con.appendChild(rowCon3);
 // Label de la 3º caja de texto
 const labelCon3 = document.createElement("label");
 labelCon3.setAttribute("id", "labelCon3");
-labelCon3.setAttribute("for", "ConText3");
+labelCon3.setAttribute("for", "nombre");
 labelCon3.textContent = "Nombre ";
 
 // Input de la 3º caja de texto
 const inpCon3 = document.createElement("input");
 inpCon3.setAttribute("type", "Text");
-inpCon3.setAttribute("id", "ConText3");
+inpCon3.setAttribute("id", "nombre");
 inpCon3.setAttribute("placeholder", "Nombre");
 inpCon3.setAttribute("required", "true");
 
@@ -139,13 +139,13 @@ r1c1Con.appendChild(rowCon5);
 // Label de la 5º caja de texto
 const labelCon5 = document.createElement("label");
 labelCon5.setAttribute("id", "labelCon5");
-labelCon5.setAttribute("for", "ConText5");
+labelCon5.setAttribute("for", "apellidos");
 labelCon5.textContent = "Apellidos ";
 
 // Input de la 5º caja de texto
 const inpCon5 = document.createElement("input");
 inpCon5.setAttribute("type", "Text");
-inpCon5.setAttribute("id", "ConText5");
+inpCon5.setAttribute("id", "apellidos");
 inpCon5.setAttribute("placeholder", "Apellidos");
 inpCon5.setAttribute("required", "true");
 
@@ -155,7 +155,7 @@ rowCon5.appendChild(inpCon5);
 
 
 
-//El segundo div contendrá la dirección y el teléfoto
+//El segundo div contendrá la dirección y el teléfono
 
 // div de la 2ª columna
 const r2c2Con = document.createElement("div");
@@ -173,13 +173,13 @@ r2c2Con.appendChild(rowCon2);
 const labelCon2 = document.createElement("label");
 
 labelCon2.setAttribute("id", "labelCon2");
-labelCon2.setAttribute("for", "ConText2");
+labelCon2.setAttribute("for", "email");
 labelCon2.textContent = "Correo electrónico";
 
 // Input de la 2º caja de texto
 const inpCon2 = document.createElement("input");
 inpCon2.setAttribute("type", "Text");
-inpCon2.setAttribute("id", "ConText2");
+inpCon2.setAttribute("id", "email");
 inpCon2.setAttribute("placeholder", "Correo electrónico");
 inpCon2.setAttribute("required", "true");
 
@@ -198,13 +198,13 @@ r2c2Con.appendChild(rowCon4);
 const labelCon4 = document.createElement("label");
 
 labelCon4.setAttribute("id", "labelCon4");
-labelCon4.setAttribute("for", "ConText4");
+labelCon4.setAttribute("for", "telefono");
 labelCon4.textContent = "Teléfono ";
 
 // Input de la 4º caja de texto
 const inpCon4 = document.createElement("input");
 inpCon4.setAttribute("type", "Text");
-inpCon4.setAttribute("id", "ConText4");
+inpCon4.setAttribute("id", "telefono");
 inpCon4.setAttribute("placeholder", "Teléfono");
 inpCon4.setAttribute("required", "true");
 
@@ -791,7 +791,7 @@ r2c2New.appendChild(labelTerminos);
 
 
 /*
-=============================================== validación del formulario ================================================ 
+=============================================== Botones del formulario ================================================ 
 */
 
 //boton de envio
@@ -818,55 +818,3 @@ fieldsetAcciones.appendChild(reset);
 */
 
 
-submit.addEventListener("click", validacion);
-
-
-
-function validacion() {
-
-  //Comprobamos si se rellenan los campos con los datos del cliente
-  if (nombre.value.trim() == "") {
-    alert ('¡¡¡ERROR!!! Debe de escribir el nombre del cliente.')
-    return false;
-  }
-
-  if (direccion.value.trim() == "") {
-    alert ('¡¡¡ERROR!!! Debe de escribir la direccion del cliente.')
-    return false;
-  }
-
-  if (telefono.value.trim() == "") {
-    alert ('¡¡¡ERROR!!! Debe de escribir el telefono del cliente.')
-    return false;
-  }
-
-  if (email.value.trim() == "") {
-    alert ('¡¡¡ERROR!!! Debe de escribir el correo electronico del cliente.')
-    return false;
-  }
-
-  //Expresiones para validar los campos del formulario
-  reNombre = /^[A-Z][A-z]+$/
-  if(!nombre.value.match(reNombre)) {
-    alert ('¡¡¡ERROR!!! Formato del nombre incorrecto.')
-    return false;
-  }
-
-  reTelefono = /^\d{9}$/
-  if (!telefono.value.match(reTelefono)) {
-    alert ('¡¡¡ERROR!!! Formato del telefono incorrecto.')
-    return false;
-  }
-
-  reEmail = /^(.+\@.+\..+)$/
-  if (!email.value.match(reEmail)) {
-    alert ('¡¡¡ERROR!!! Formato del correo electronico incorrecto.')
-    return false;
-  }
-
-  const elementosObligatorios = document.querySelectorAll("[required]")
-  for (let elemento of elementosObligatorios) {
-    elemento.classList.add("validar");
-
-}
-}
