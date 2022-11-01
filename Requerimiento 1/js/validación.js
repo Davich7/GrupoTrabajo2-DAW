@@ -26,24 +26,24 @@ function validacion(event) {
   }
 
   if (email.value.trim() == "") {
-    alert ('Debe de escribir un correo electrónico')
+    alert ('Debe de escribir un correo electrónico.')
     return false;
   }
 
   //Expresiones para validar los campos del formulario
-  reNombre = /^[A-Z][A-z]+$/
+  const reNombre = /^[A-Z][A-z]+$/
   if(!nombre.value.match(reNombre)) {
     alert ('¡¡¡ERROR!!! Formato del nombre incorrecto.')
     return false;
   }
 
-  reTelefono = /^\d{9}$/
+  const reTelefono = /^\d{9}$/
   if (!telefono.value.match(reTelefono)) {
     alert ('¡¡¡ERROR!!! Formato del telefono incorrecto.')
     return false;
   }
 
-  reEmail = /^(.+\@.+\..+)$/
+  const reEmail = /^(.+\@.+\..+)$/
   if (!email.value.match(reEmail)) {
     alert ('¡¡¡ERROR!!! Formato del correo electronico incorrecto.')
     return false;
