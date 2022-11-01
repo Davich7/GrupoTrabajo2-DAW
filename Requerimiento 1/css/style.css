@@ -112,7 +112,10 @@
       outline:  1px solid #d60303;
   }
   
-  
+  input[type="text"].validar:invalid {
+    width:100%;
+    height: 1.4rem;
+}
   
   input[type="radio"].validar:invalid {
       outline: none;

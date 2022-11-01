@@ -1,29 +1,32 @@
 window.onload = function () {
+  submit.addEventListener("click", validacion);
+}
 
-    submit.addEventListener("click", validarFormulario);
+function validacion(event) {
 
-   
-};
+  //Comprobamos si se rellenan los campos con los datos del cliente
+  if (dni.value.trim() == "") {
+    alert ('Debe de escribir el DNI.')
+    return false;
+  }
 
-function validarFormulario() {
-    //Comprobamos si se rellenan los campos con los datos del cliente
   if (nombre.value.trim() == "") {
-    alert ('¡¡¡ERROR!!! Debe de escribir el nombre del cliente.')
+    alert ('Debe de escribir el nombre del cliente.')
     return false;
   }
 
-  if (direccion.value.trim() == "") {
-    alert ('¡¡¡ERROR!!! Debe de escribir la direccion del cliente.')
+  if (apellidos.value.trim() == "") {
+    alert ('Debe de escribir al menos un apellido del cliente.')
     return false;
   }
 
-  if (tel.value.trim() == "") {
-    alert ('¡¡¡ERROR!!! Debe de escribir el telefono del cliente.')
+  if (telefono.value.trim() == "") {
+    alert ('Debe de escribir un número de telefono.')
     return false;
   }
 
   if (email.value.trim() == "") {
-    alert ('¡¡¡ERROR!!! Debe de escribir el correo electronico del cliente.')
+    alert ('Debe de escribir un correo electrónico')
     return false;
   }
 
@@ -46,3 +49,5 @@ function validarFormulario() {
     return false;
   }
 }
+
+formulario.onsubmit = validacion;

@@ -99,6 +99,7 @@ const inpCon1 = document.createElement("input");
 inpCon1.setAttribute("type", "Text");
 inpCon1.setAttribute("id", "dni");
 inpCon1.setAttribute("placeholder", "DNI");
+inpCon1.setAttribute("class", "form-control")
 inpCon1.setAttribute("required", "true");
 
 rowCon1.appendChild(labelCon1);
@@ -123,6 +124,7 @@ const inpCon3 = document.createElement("input");
 inpCon3.setAttribute("type", "Text");
 inpCon3.setAttribute("id", "nombre");
 inpCon3.setAttribute("placeholder", "Nombre");
+inpCon3.setAttribute("class", "form-control")
 inpCon3.setAttribute("required", "true");
 
 rowCon3.appendChild(labelCon3);
@@ -147,6 +149,7 @@ const inpCon5 = document.createElement("input");
 inpCon5.setAttribute("type", "Text");
 inpCon5.setAttribute("id", "apellidos");
 inpCon5.setAttribute("placeholder", "Apellidos");
+inpCon5.setAttribute("class", "form-control")
 inpCon5.setAttribute("required", "true");
 
 rowCon5.appendChild(labelCon5);
@@ -180,7 +183,8 @@ labelCon2.textContent = "Correo electrónico";
 const inpCon2 = document.createElement("input");
 inpCon2.setAttribute("type", "Text");
 inpCon2.setAttribute("id", "email");
-inpCon2.setAttribute("placeholder", "Correo electrónico");
+inpCon2.setAttribute("placeholder", "Email");
+inpCon2.setAttribute("class", "form-control")
 inpCon2.setAttribute("required", "true");
 
 rowCon2.appendChild(labelCon2);
@@ -206,6 +210,7 @@ const inpCon4 = document.createElement("input");
 inpCon4.setAttribute("type", "Text");
 inpCon4.setAttribute("id", "telefono");
 inpCon4.setAttribute("placeholder", "Teléfono");
+inpCon4.setAttribute("class", "form-control")
 inpCon4.setAttribute("required", "true");
 
 rowCon4.appendChild(labelCon4);
@@ -816,5 +821,10 @@ fieldsetAcciones.appendChild(reset);
 /*
 ================================================ validación del formulario =============================================== 
 */
-
+submit.addEventListener("click", () => {
+  const elementosObligatorios = document.querySelectorAll("[required]")
+  for (let elemento of elementosObligatorios) {
+    elemento.classList.add("validar");
+  }
+});
 
