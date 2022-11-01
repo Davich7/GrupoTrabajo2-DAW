@@ -300,10 +300,10 @@ function validarEmail() {
 
 function validarMinIngredientes() {
   let valido = false;
-  const mensajeError = document.querySelector("#ingredientes p");
+  const mensajeError = document.querySelector("#opciones-pizza p p");
 
   const ingredientesChkboxes = document.querySelectorAll(
-    'ingredientes input[type="checkbox"]'
+    '#opciones-pizza p p input[type="checkbox"]'
   );
   // iteramos por las checkboxes para ver si alguna esta marcada
   // y actualizar el resultado de la validacion
@@ -340,7 +340,7 @@ function validarMinIngredientes() {
 
 function validarMasa() {
   let valido = false;
-  const mensajeErrorMasa = document.querySelector("#masa p");
+  const mensajeErrorMasa = document.querySelector(".error-masa");
   const masaRadioButton = document.getElementsByName("masa");
 
   // Iteramos por los radio button para ver si alguno esta marcado
@@ -373,7 +373,7 @@ function validarMasa() {
  */
 function validarTamanio() {
   let valido = false;
-  const mensajeErrorTamanio = document.querySelector("#tamanio p");
+  const mensajeErrorTamanio = document.querySelector(".error-tamanio");
   const tamanioRadioButton = document.getElementsByName("tamanio");
 
   // Iteramos por los radio button para ver si alguno esta marcado
