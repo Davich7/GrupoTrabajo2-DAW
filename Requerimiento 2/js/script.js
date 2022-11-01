@@ -1,20 +1,28 @@
+//  Función window.onload
+
+/*Creamos una función window.onload  para asegurarnos de que el html se ha cargado completamente antes de 
+pasar a la validación del formulario.*/
+
 window.onload = function () {
-  //event listeners
-  submit.addEventListener("click", validarFormulario); //validacion del formulario completo
+  console.log("¡Quiero mi pizza!");
 
-  //validacion inmediata de nombre
-  nombre.addEventListener("keyup", validarNombre);
+    //event listeners
+    //validacion del formulario completo
+    submit.addEventListener("click", validarFormulario); 
 
-  //validacion inmediata de apellidos
-  apellidos.addEventListener("keyup", validarApellidos);
+    //validacion inmediata de nombre
+    nombre.addEventListener("keyup", validarNombre);
 
-  //validacion inmediata de la direccion
-  ConText2.addEventListener("keyup", function () {
-    var direccion = document.getElementById("ConText2");
-    var mensajeErrorDireccion = document.querySelector(".direccion-error");
-    if (direccion.classList.contains("invalido")) {
-      direccion.classList.remove("invalido");
-      mensajeErrorDireccion.textContent = "";
+    //validacion inmediata de apellidos
+    apellidos.addEventListener("keyup", validarApellidos);
+
+    //validacion inmediata de la direccion
+    ConText2.addEventListener("keyup", function () {
+      var direccion = document.getElementById("ConText2");
+      var mensajeErrorDireccion = document.querySelector(".direccion-error");
+      if (direccion.classList.contains("invalido")) {
+        direccion.classList.remove("invalido");
+        mensajeErrorDireccion.textContent = "";
     }
   });
 
@@ -56,6 +64,7 @@ window.onload = function () {
   const terminos = document.getElementById("terminos");
   terminos.addEventListener("click", validarTerminos);
 };
+
 
 /*
  *============= Validacion formulario =============
@@ -100,7 +109,7 @@ function validarNombre() {
 
   // La expresión regular usada tanto en validarNombre() como en validarApellidos() incluye acentos y también la ñ
   //También se asegura de que la primera letra del nombre y apellido sea una mayúscula
-  //Del mismo modo se asegura de que el input no se componga solo de espacios en blanco
+  //Del mismo modo se asegura de que el input no se componga solo de espacios en blanco.
   const pattern =
     /^[A-Z][a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/;
 
