@@ -470,8 +470,8 @@ r2c2Serv.appendChild(rowRb7);
 const inpRb7 = document.createElement("input");
 inpRb7.setAttribute("type", "radio");
 inpRb7.setAttribute("id", "rb7");
-inpRb7.setAttribute("name", "cercedilla");
-inpRb7.setAttribute("value", "coach");
+inpRb7.setAttribute("name", "rbnom");
+inpRb7.setAttribute("value", "Cercedilla");
 inpRb7.setAttribute("required", "required");
 
 //Etiqueta label
@@ -495,7 +495,7 @@ r2c2Serv.appendChild(rowRb8);
 //Nodos 
 const inpRb8 = document.createElement("input");
 inpRb8.setAttribute("type", "radio");
-inpRb8.setAttribute("id", "rb4");
+inpRb8.setAttribute("id", "rb8");
 inpRb8.setAttribute("name", "rbnom");
 inpRb8.setAttribute("value", "alcorcón");
 inpRb8.setAttribute("required", "required");
