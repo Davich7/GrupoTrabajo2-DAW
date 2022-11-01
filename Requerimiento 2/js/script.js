@@ -80,7 +80,7 @@ function validarFormulario(event) {
     alert("Parece que hay errores en el formulario");
     event.preventDefault();
   } else if (
-    !confirm(`Pedir pizza por un precio de ${calcularPrecio()}\u20AC?`)
+    !confirm(`¿Pedir una RicoPizza por un precio de ${calcularPrecio()}\u20AC?`)
   ) {
     event.preventDefault();
   }

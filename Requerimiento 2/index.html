@@ -29,7 +29,7 @@
 
       <!--Creamos el formulario y asignamos una ID para acceder más facilmente-->
       <form  action="#" method="post"> 
-       <fieldset>
+       <fieldset id="contenedor">
         <legend class="form__titulo">Realizar Pedido</legend>
         <!-- Creamos un primer bloque para los datos personales-->
         <fieldset id="contacto"> 
@@ -140,6 +140,10 @@
                 <p class="mensaje-error error-tamanio"></p>
               </div>
             </div>
+            <div class="inline-column">
+              <!-- Creamos el parrafo que mostrará el precio de la pizza según lo que seleccionemos -->
+              <p id="info-precio" class="btn"></p>
+            </div>
           </fieldset>
   
           <fieldset id="pedido">
@@ -174,11 +178,6 @@
 
           <fieldset id="acciones">
             <div class="fieldset-row">
-              <div class="inline-column">
-                <!-- Creamos el parrafo que mostrará el precio de la pizza según lo que seleccionemos -->
-                <p id="info-precio" class="btn"></p>
-              </div>
-
               <!-- Creamos el boón submit con el que se iniciará el proceso de validación del script-->
                 <div class="inline-column">
                 <button type="submit" name="submit" id="submit" class="cta">Realizar Pedido</button>

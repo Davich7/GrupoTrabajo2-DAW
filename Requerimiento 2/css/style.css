@@ -1,16 +1,13 @@
-html{
-    height: 100%;
-}
 * {
     box-sizing: border-box;
 }
 
 body{
-    font-family: "Helvetica","Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-family: "Helvetica", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
     background-color:#2F3035;
     background-image: url("../images/background.png");
     background-size: cover;
-    background-repeat: repeat;
+    background-repeat: no-repeat;
     background-position: center;
     width: 1024px;
     margin-left:auto ;
@@ -19,17 +16,29 @@ body{
 
 
 header{
-    /*background-color: blue;*/
     height: 400px;
-    /*width: 1024px;*/
     text-align: center; 
 }
+
 nav{
     background-color: rgba(0, 0, 0, 0.350);
-    height: 30px;
     text-align: center;
-    padding: 5px;   
+    padding: 1rem;   
 }
+
+p.nav{
+  font-size: 18px;
+  color: rgb(255, 222, 124);
+}
+
+nav a{
+  text-decoration: none;
+  color: rgb(255, 222, 124);
+  font-size: 16px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 
 main{
     text-align: center;
@@ -58,30 +67,18 @@ h1{
     color: white;   
 }
 
-p.nav{
-    font-size: 18px;
-    color: white;
-}
 
 a{
     color: white;
-    /*text-decoration: none;*/
 }
 
-nav a{
-    text-decoration: none;
-    font-size: 16px;
-    padding-left: 20px;
-    padding-right: 20px;
-}
+
 
 form{
     font-size:  1rem;
     color: #fac34c;
     font-family: Arial, Helvetica, sans-serif;
     background-color:  #0000008c;
-    border-radius: 5px;
-    border-color: #fac34c;
     text-align: left;
 }
 
@@ -94,9 +91,8 @@ fieldset {
     width: 95%;
     margin: 1rem auto;
     border: none;
-    border-bottom: 1px solid #fff1d1;
     padding: 1rem;
-    border: 1px solid #fff1d1;
+    border-bottom: 1px solid #fff1d1;
   }
 
   
@@ -119,10 +115,13 @@ fieldset {
   
   .inline-column {
     flex-direction: row;
+    width: 100%;
     align-items: flex-start;
   }
   
-
+  #contenedor{
+    border: 1px solid #fff1d1;
+  }
   .datos_personales{
     text-align: center;
   }
@@ -198,15 +197,22 @@ fieldset {
   }
   
   #info-precio {
-    color: #ffffff;
-    border: 1px #ffffff;
-    padding: 1rem 1.5rem;
+    font-size:18px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    
+    width: 100%;
+    color: white;
     margin: 0;
-    display: none;
+    border: none;
+    border-radius: 4px;
   }
-  
+
   #info-precio.visible {
-    display: unset;
+    text-align: center;
+    background-color: #2524249f;
+    color: white;
+    padding: 14px 20px;
   }
  
   
