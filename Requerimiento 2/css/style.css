@@ -6,7 +6,7 @@ html{
 }
 
 body{
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-family: "Helvetica","Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 
     background-color:#2F3035;
     background-image: url("../images/background.png");
@@ -30,8 +30,9 @@ nav{
     background-color: rgba(0, 0, 0, 0.350);
     height: 30px;
     text-align: center;
-    padding-top: 14px;   
+    padding: 5px;   
 }
+
 main{
     text-align: center;
     padding-top:80px ;
@@ -53,20 +54,20 @@ footer{
     color: white;
     font-size: 14px;  
 }
+
 h1{
     font-size: 84px;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;   
+    color: white;   
 }
+
 p.nav{
     font-size: 18px;
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
 }
+
 a{
     color: white;
     /*text-decoration: none;*/
-    font-family: Arial, Helvetica, sans-serif;
 }
 nav a{
     text-decoration: none;
@@ -74,44 +75,103 @@ nav a{
     padding-left: 20px;
     padding-right: 20px;
 }
+
 form{
-    font-size: 18px;
-    color: rgba(255, 248, 190, 0.945);
+    font-size:  1rem;
+    color: #fac34c;
     font-family: Arial, Helvetica, sans-serif;
-    background-color:  rgba(0, 0, 0, 0.550);
+    background-color:  #0000008c;
     border-radius: 5px;
-    border-color: rgba(255, 248, 190, 0.945);
+    border-color: #fac34c;
     text-align: left;
 }
-
 
 
 ul{
     text-align: justify;
     
 }
+fieldset {
+    width: 95%;
+    margin: 1rem auto;
+    border: none;
+    border-bottom: 1px solid #fff1d1;
+    padding: 1rem;
+    border: 1px solid #fff1d1;
+  }
 
-div.datos_personales{
+
+  
+  .form__titulo {
+    color: #faad06;
+    font-size: 1.2rem;
+  }
+  
+  fieldset legend {
+    color: #faad06;
+    font-style: italic;
+  }
+  
+  .fieldset-row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .fieldset-column {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 1rem;
+  }
+  
+  .inline-column {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  
+
+.datos_personales{
     text-align: center;
-    
 }
-   input[type=text],[type=email],[type=tel], select {
+
+    input[type="radio"],
+    input[type="checkbox"],
+    select,
+    input + label {
+      cursor: pointer;
+    }
+
+textarea{
+    width: 100%;
+}
+    label[for="textArea"] {
+      margin-top: 2rem;
+    }
+
+
+   input[type=text],
+   [type=email],
+   [type=tel], select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     display:block;
-    border: 1px solid #ccc;
+    border: 1px solid #cccccc;
     border-radius: 4px;
     box-sizing: border-box;
   }
 
  
-  input[type=submit] {
+
+  #acciones {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  button {
     font-size:18px;
     font-family: Arial, Helvetica, sans-serif;
-    border:0px;
-    border-radius: 3px;
-    width:100px;
+    font-weight: bold;
     width: 100%;
     background-color: #2524249f;
     color: white;
@@ -120,41 +180,77 @@ div.datos_personales{
     border: none;
     border-radius: 4px;
     cursor: pointer;
+  }
+  
+
+  .cta,.res, .btn {
+    background: #2524249f;
+    color: white;
+    border-color: white;
+  }
+  
+  .btn:active,
+  .btm.hoover,
+  .cta:active,
+  .res:active,
+  .cta:hover,
+  .res:hover {
+    font-weight: bold;
+    background-color: #ffb514;
+    color: #2524249f;
+    border-color: #2524249f;
+  }
+
+
+  #contacto .inline-column {
+    padding: 2%;
+  }
+  
+  #info-precio {
+    color: #2524249f;
+    border: 1px #2524249f;
+    padding: 1rem 1.5rem;
+    margin: 0;
+    display: none;
+  }
+  
+  #info-precio.visible {
+    display: unset;
   }
  
-  input[type=submit] {
-    font-size:18px;
-    font-family: Arial, Helvetica, sans-serif;
-    border:0px;
-    border-radius: 3px;
-    width:100px;
-    width: 100%;
-    background-color: #2524249f;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+  
+  .mensaje-error {
+    font-family: "Courier New", Courier, monospace;
+    /* font-family: 'Times New Roman', Times, serif; */
+    font-size: 0.8rem;
+    line-height: 0.8rem;
+    margin: 3px;
   }
-  input[type=reset] {
-    font-size:18px;
-    font-family: Arial, Helvetica, sans-serif;
-    border:0px;
-    border-radius: 3px;
-    width:100px; 
-    width: 100%;
-    background-color: #2524249f;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+  
+  .invalido {
+    background: #f8aaaa;
+    border: 1px solid #d60303;
+    outline: 1px solid #d60303;
   }
-  input[type=submit]:hover {
-    background-color: #424242be;
+  
+  input.invalido {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: 1px solid #d60303;
+    border: 1px solid #d60303;
+    border-radius: 2px;
+    background-color: #f8aaaa;
   }
-  input[type=reset]:hover {
-    background-color: #424242be;
+  
+  input[type="checkbox"].invalido {
+    width: 0.7rem;
+    height: 0.7rem;
   }
+  
+  input[type="radio"].invalido {
+    width: 10px;
+    height: 10px;
+    border-radius: 20px;
+  }
+  

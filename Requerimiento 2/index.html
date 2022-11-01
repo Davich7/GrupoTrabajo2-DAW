@@ -33,27 +33,27 @@
        
         <!-- Creamos un primer bloque para los datos personales-->
         <fieldset id="contacto"> 
-          <legend id="datos">Introduce tus datoss</legend> 
+          <legend id="datos">Introduce tus datos</legend> 
 
           <div class="datos_personales">
-            <div class="fieldset-column">
+           
 
               <!-- Creamos un input para el Nombre, le dadmeos un id  para acceder, y un placeholder-->
               <div class="inline-column">
                 <label id="labelCon1" for="ConText1">Nombre </label>
-                <input type="Text" id="ConText1" name="nombre" placeholder="Nombre" required>
+                <input type="text" id="ConText1" name="nombre" placeholder="Nombre" required>
                 <p class="mensaje-error nombre-error"></p>
               </div>
 
               <div class="inline-column">
                 <label id="labelCon2" for="ConText2">Apellidos </label>
-                <input type="Text" id="ConText2" name="apellidos" placeholder="Apellidos" required>
+                <input type="text" id="ConText2" name="apellidos" placeholder="Apellidos" required>
                 <p class="mensaje-error apellidos-error"></p>
               </div>
 
               <div class="inline-column">
                 <label id="labelCon3" for="ConText3">Dirección </label>
-                <input type="Text" id="ConText3" name="direccion" placeholder="Dirección" maxlength="100" required>
+                <input type="text" id="ConText3" name="direccion" placeholder="Dirección" maxlength="100" required>
                 <p class="mensaje-error direccion-error"></p>
               </div>
 
@@ -68,8 +68,9 @@
                 <input type="email" id="ConText5" name="email" placeholder="eMail" required>
                 <p class="mensaje-error email-error"></p>
               </div>
-
-            </div>
+            
+            
+          </div>
         </fieldset>
 
         <!-- Creamos un segundo bloque para contener las opciones donde estarán los Radio Buttons y el Checkbox-->
@@ -103,7 +104,7 @@
           </div>
 
           <!-- Creamos un div para contener los Radio Buttons del tipo de masa y tamaño-->
-          <div id="masa" class="fieldset-row">
+          <div id="masatamanio" class="fieldset-row">
             <div class="fieldset-column">
   
               <label>Elige el tipo de masa</label>
@@ -148,8 +149,10 @@
   
         <fieldset id="pedido">
           <legend>Sobre el pedido</legend>
-          <div class="fieldset-row">
-            <div class="fieldset-column">
+          <div id="pedido"></div>
+
+          
+          <div class="inline-column">
               <label for="restaurante">Elige un restaurante</label>
               <select name="restaurante" id="restaurante" required>
                 <option value="">Elige un restaurante</option>
@@ -158,28 +161,40 @@
                 <option value="res3">Cantoblanco</option>
                 <option value="res4">Moncloa</option>
               </select>
-              <label for="textArea">Introduce aquí información sobre alergias u otras notas adicionales:</label>
-              <textarea id="textArea" cols="40" rows="4" placeholder="Escribe aquí:"></textarea>
-            </div>
           </div>
-          <div class="fieldset-row">
-            <div class="fieldset-column inline-column">
+
+          <div class="inline-column">
+            <label for="textArea">Introduce aquí información sobre alergias u otras notas adicionales:</label>
+            <textarea id="textArea" cols="40" rows="4" placeholder="Escribe aquí:"></textarea>
+          </div>
+
+          <div class="inline-column">
               <input type="checkbox" name="terminos" id="terminos" value="true" required>
               <label for="terminos">Acepto los términos y condiciones</label>
-            </div>
-            <div class="fieldset-column">
+          </div>  
+
+          <div class="inline-column">
               <p class="mensaje-error terminos__error"></p>
-            </div>
           </div>
+
         </fieldset>
 
         <fieldset id="acciones">
+          <div class="fieldset-row">
+
           <!-- Creamos el parrafo que mostrará el precio de la pizza según lo que seleccionemos -->
           <p id="info-precio" class="btn"></p>
+          </div>
+
           <!-- Creamos el boón submit con el que se iniciará el proceso de validación del script-->
+          <div class="fieldset-row">
           <button type="submit" name="submit" id="submit" class="cta">Realizar Pedido</button>
+          </div>
+
+          <div class="fieldset-row">
           <!--Creamos un botón para borrar los datos introducidos-->
-          <button type="reset" name="reset" id="reset">Borrar formulario</button>
+          <button type="reset" name="reset" id="reset" class="res">Borrar formulario</button>
+          </div>
         </fieldset>
       
       </form>

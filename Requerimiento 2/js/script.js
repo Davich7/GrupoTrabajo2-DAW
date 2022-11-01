@@ -4,7 +4,7 @@
 pasar a la validación del formulario.*/
 
 window.onload = function () {
-  console.log("¡Quiero mi pizza!");
+  //console.log("¡Quiero mi pizza!");
 
     //event listeners
     //validacion del formulario completo
@@ -37,6 +37,7 @@ window.onload = function () {
   const ingredientesChkboxes = document.querySelectorAll(
     '#opciones-pizza input[type="checkbox"]'
   );
+
   ingredientesChkboxes.forEach((chkbox) => {
     chkbox.addEventListener("change", validarMinIngredientes);
     chkbox.onchange = calcularPrecio;
@@ -306,10 +307,10 @@ function validarEmail() {
 
 function validarMinIngredientes() {
   let valido = false;
-  const mensajeError = document.querySelector("#opciones-pizza p");
+  const mensajeError = document.querySelector("#ingredientes p");
 
   const ingredientesChkboxes = document.querySelectorAll(
-    '#opciones-pizza input[type="checkbox"]'
+    'ingredientes input[type="checkbox"]'
   );
   // iteramos por las checkboxes para ver si alguna esta marcada
   // y actualizar el resultado de la validacion
@@ -346,7 +347,7 @@ function validarMinIngredientes() {
 
 function validarMasa() {
   let valido = false;
-  const mensajeErrorMasa = document.querySelector(".error-masa");
+  const mensajeErrorMasa = document.querySelector("#masa p");
   const masaRadioButton = document.getElementsByName("masa");
 
   // Iteramos por los radio button para ver si alguno esta marcado
@@ -379,7 +380,7 @@ function validarMasa() {
  */
 function validarTamanio() {
   let valido = false;
-  const mensajeErrorTamanio = document.querySelector(".error-tamanio");
+  const mensajeErrorTamanio = document.querySelector("#tamanio p");
   const tamanioRadioButton = document.getElementsByName("tamanio");
 
   // Iteramos por los radio button para ver si alguno esta marcado
