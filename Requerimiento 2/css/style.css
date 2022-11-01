@@ -7,19 +7,17 @@ html{
 
 body{
     font-family: "Helvetica","Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-
     background-color:#2F3035;
     background-image: url("../images/background.png");
     background-size: cover;
     background-repeat: repeat;
     background-position: center;
-}
-
-.container{
     width: 1024px;
     margin-left:auto ;
     margin-right:auto ;
 }
+
+
 header{
     /*background-color: blue;*/
     height: 400px;
@@ -69,6 +67,7 @@ a{
     color: white;
     /*text-decoration: none;*/
 }
+
 nav a{
     text-decoration: none;
     font-size: 16px;
@@ -100,12 +99,6 @@ fieldset {
     border: 1px solid #fff1d1;
   }
 
-
-  
-  .form__titulo {
-    color: #faad06;
-    font-size: 1.2rem;
-  }
   
   fieldset legend {
     color: #faad06;
@@ -130,28 +123,28 @@ fieldset {
   }
   
 
-.datos_personales{
+  .datos_personales{
     text-align: center;
-}
+  }
 
-    input[type="radio"],
-    input[type="checkbox"],
-    select,
-    input + label {
-      cursor: pointer;
-    }
+  input[type="radio"],
+  input[type="checkbox"],
+  select,
+  input + label {
+    cursor: pointer;
+  }
 
-textarea{
+  textarea{
     width: 100%;
-}
-    label[for="textArea"] {
-      margin-top: 2rem;
-    }
+  }
 
+  label[for="textArea"] {
+    margin-top: 2rem;
+  }
 
-   input[type=text],
-   [type=email],
-   [type=tel], select {
+  input[type=Text],
+  [type=email],
+  [type=tel], select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -160,8 +153,6 @@ textarea{
     border-radius: 4px;
     box-sizing: border-box;
   }
-
- 
 
   #acciones {
     display: flex;
@@ -207,8 +198,8 @@ textarea{
   }
   
   #info-precio {
-    color: #2524249f;
-    border: 1px #2524249f;
+    color: #ffffff;
+    border: 1px #ffffff;
     padding: 1rem 1.5rem;
     margin: 0;
     display: none;

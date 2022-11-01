@@ -9,12 +9,11 @@
   <title>Tu Pizza</title>
   <link rel="stylesheet" href="./css/style.css" />
   <!-- Enlazamos el archivo .js donde se encontrarán las funciones de validación de la actividad-->
-  <script src="./js/validacion.js" defer></script></script>
+  <script src="./js/script.js" defer></script>
 </head>
 
 <body>
   <!-- Creamos el contendor principal que contendrá todo nuestros elementos html-->
-  <div class="container">
     <header>
       <img src="./images/logo.png" alt="logo" /> <!-- Cremos un header e incluimos el logo-->
     </header>
@@ -29,48 +28,44 @@
     <main> 
 
       <!--Creamos el formulario y asignamos una ID para acceder más facilmente-->
-      <form id="formulario" class="formulario" action="#" method="post"> 
-       
+      <form  action="#" method="post"> 
+       <fieldset>
+        <legend class="form__titulo">Realizar Pedido</legend>
         <!-- Creamos un primer bloque para los datos personales-->
         <fieldset id="contacto"> 
-          <legend id="datos">Introduce tus datos</legend> 
-
-          <div class="datos_personales">
-           
-
+          <legend>Introduce tus datos</legend> 
+          <div class="fieldset-row">
               <!-- Creamos un input para el Nombre, le dadmeos un id  para acceder, y un placeholder-->
               <div class="inline-column">
-                <label id="labelCon1" for="ConText1">Nombre </label>
-                <input type="text" id="ConText1" name="nombre" placeholder="Nombre" required>
+                <label id="labelCon1" for="nombre">Nombre </label>
+                <input type="Text" id="nombre" name="nombre" placeholder="Nombre" required>
                 <p class="mensaje-error nombre-error"></p>
               </div>
 
               <div class="inline-column">
-                <label id="labelCon2" for="ConText2">Apellidos </label>
-                <input type="text" id="ConText2" name="apellidos" placeholder="Apellidos" required>
+                <label id="labelCon2" for="apellidos">Apellidos </label>
+                <input type="Text" id="apellidos" name="apellidos" placeholder="Apellidos" required>
                 <p class="mensaje-error apellidos-error"></p>
               </div>
 
               <div class="inline-column">
-                <label id="labelCon3" for="ConText3">Dirección </label>
-                <input type="text" id="ConText3" name="direccion" placeholder="Dirección" maxlength="100" required>
+                <label id="labelCon3" for="direccion">Dirección </label>
+                <input type="Text" id="direccion" name="direccion" placeholder="Dirección" maxlength="100" required>
                 <p class="mensaje-error direccion-error"></p>
               </div>
 
               <div class="inline-column">
-                <label id="labelCon4" for="ConText4">Teléfono </label>
-                <input type="tel" id="ConText4" name="telefono" placeholder="Telefono" required>
+                <label id="labelCon4" for="telefono">Teléfono </label>
+                <input type="tel" id="telefono" name="telefono" placeholder="Telefono" required>
                 <p class="mensaje-error"></p>
               </div>
 
               <div class="inline-column">
-                <label id="labelCon5" for="ConText5"> Email </label>
-                <input type="email" id="ConText5" name="email" placeholder="eMail" required>
+                <label id="labelCon5" for="email"> Email </label>
+                <input type="email" id="email" name="email" placeholder="eMail" required>
                 <p class="mensaje-error email-error"></p>
               </div>
-            
-            
-          </div>
+            </div>
         </fieldset>
 
         <!-- Creamos un segundo bloque para contener las opciones donde estarán los Radio Buttons y el Checkbox-->
@@ -78,8 +73,9 @@
           <legend>¿Cómo quieres tu RicoPizza?</legend>
 
           <!-- Creamos un div para contener el CheckBox de los ingredientes-->
-          <div id="ingredientes" class="fieldset-row">
-            <div class="fieldset-column"><label>Elige los ingredientes - 1€ cada uno</label>
+          <div class="fieldset-row">
+            <div class="fieldset-column">
+              <label>Elige los ingredientes - 1€/ud</label>
               <div class="inline-column">
                 <input type="checkbox" id="ing-queso" name="queso" value="true">
                 <label for="ing-queso">Mezcla de quesos</label>
@@ -100,11 +96,10 @@
               </div>
               <p class="mensaje-error"></p>
             </div>
-
           </div>
 
           <!-- Creamos un div para contener los Radio Buttons del tipo de masa y tamaño-->
-          <div id="masatamanio" class="fieldset-row">
+          <div class="fieldset-row">
             <div class="fieldset-column">
   
               <label>Elige el tipo de masa</label>
@@ -127,76 +122,76 @@
               <p class="mensaje-error error-masa"></p>
             </div>
 
-           <!-- A cada botón, le asignamos el mismo "name" y en los valores colocamos el valor que pasaremos luego por la función-->
-            <div class="fieldset-column">
-              <label>Elige el tamaño</label>
-              <div class="inline-column">
-                <input type="radio" name="tamanio" id="radiobutton5" value="pequeña" required>
-                <label id="labelrb5" for="radiobutton5">Pequeña - 5€</label>
+            <!-- A cada botón, le asignamos el mismo "name" y en los valores colocamos el valor que pasaremos luego por la función-->
+              <div class="fieldset-column">
+                <label>Elige el tamaño</label>
+                <div class="inline-column">
+                  <input type="radio" name="tamanio" id="radiobutton5" value="pequeña" required>
+                  <label id="labelrb5" for="radiobutton5">Pequeña - 5€</label>
+                </div>
+                <div class="inline-column">
+                  <input type="radio" name="tamanio" id="radiobutton6" value="mediana">
+                  <label id="labelrb6" for="radiobutton6">Mediana - 10€</label>
+                </div>
+                <div class="inline-column">
+                  <input type="radio" name="tamanio" id="radiobutton7" value="familiar">
+                  <label id="labelrb7" for="radiobutton7">Grande - 15€</label>
+                </div>
+                <p class="mensaje-error error-tamanio"></p>
               </div>
+            </div>
+          </fieldset>
+  
+          <fieldset id="pedido">
+            <legend>Sobre tu pedido</legend>
+            <div class="fieldset-row">
               <div class="inline-column">
-                <input type="radio" name="tamanio" id="radiobutton6" value="mediana">
-                <label id="labelrb6" for="radiobutton6">Mediana - 10€</label>
+                  <label for="restaurante">Elige un restaurante</label>
+                  <select name="restaurante" id="restaurante" required>
+                    <option value="">Elige un restaurante</option>
+                    <option value="res1">Alcorcón</option>
+                    <option value="res2">Legazpi</option>
+                    <option value="res3">Cantoblanco</option>
+                    <option value="res4">Moncloa</option>
+                  </select>
               </div>
+
               <div class="inline-column">
-                <input type="radio" name="tamanio" id="radiobutton7" value="familiar">
-                <label id="labelrb7" for="radiobutton7">Grande - 15€</label>
+                <label for="textArea">Introduce aquí información sobre alergias u otras notas adicionales:</label>
+                <textarea id="textArea" cols="40" rows="4" placeholder="Escribe aquí:"></textarea>
               </div>
-              <p class="mensaje-error error-tamanio"></p>
+
+              <div class="inline-column">
+                  <input type="checkbox" name="terminos" id="terminos" value="true" required>
+                  <label for="terminos">Acepto los términos y condiciones</label>
+              </div>  
+
+            <div class="inline-column">
+                <p class="mensaje-error terminos__error"></p>
             </div>
           </div>
-        </fieldset>
-  
-        <fieldset id="pedido">
-          <legend>Sobre el pedido</legend>
-          <div id="pedido"></div>
+          </fieldset>
 
-          
-          <div class="inline-column">
-              <label for="restaurante">Elige un restaurante</label>
-              <select name="restaurante" id="restaurante" required>
-                <option value="">Elige un restaurante</option>
-                <option value="res1">Alcorcón</option>
-                <option value="res2">Legazpi</option>
-                <option value="res3">Cantoblanco</option>
-                <option value="res4">Moncloa</option>
-              </select>
-          </div>
+          <fieldset id="acciones">
+            <div class="fieldset-row">
+              <div class="inline-column">
+                <!-- Creamos el parrafo que mostrará el precio de la pizza según lo que seleccionemos -->
+                <p id="info-precio" class="btn"></p>
+              </div>
 
-          <div class="inline-column">
-            <label for="textArea">Introduce aquí información sobre alergias u otras notas adicionales:</label>
-            <textarea id="textArea" cols="40" rows="4" placeholder="Escribe aquí:"></textarea>
-          </div>
+              <!-- Creamos el boón submit con el que se iniciará el proceso de validación del script-->
+                <div class="inline-column">
+                <button type="submit" name="submit" id="submit" class="cta">Realizar Pedido</button>
+              </div>
 
-          <div class="inline-column">
-              <input type="checkbox" name="terminos" id="terminos" value="true" required>
-              <label for="terminos">Acepto los términos y condiciones</label>
-          </div>  
-
-          <div class="inline-column">
-              <p class="mensaje-error terminos__error"></p>
-          </div>
+              <div class="inline-column">
+                <!--Creamos un botón para borrar los datos introducidos-->
+                <button type="reset" name="reset" id="reset" class="res">Borrar formulario</button>
+              </div>
+            </div>
+          </fieldset>
 
         </fieldset>
-
-        <fieldset id="acciones">
-          <div class="fieldset-row">
-
-          <!-- Creamos el parrafo que mostrará el precio de la pizza según lo que seleccionemos -->
-          <p id="info-precio" class="btn"></p>
-          </div>
-
-          <!-- Creamos el boón submit con el que se iniciará el proceso de validación del script-->
-          <div class="fieldset-row">
-          <button type="submit" name="submit" id="submit" class="cta">Realizar Pedido</button>
-          </div>
-
-          <div class="fieldset-row">
-          <!--Creamos un botón para borrar los datos introducidos-->
-          <button type="reset" name="reset" id="reset" class="res">Borrar formulario</button>
-          </div>
-        </fieldset>
-      
       </form>
     </main>
 
@@ -207,7 +202,6 @@
       </p>
     </footer>
 
-  </div>
-</body>
+  </body>
 
 </html>

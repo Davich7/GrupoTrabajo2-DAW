@@ -1,23 +1,22 @@
-//  Función window.onload
-
-/*Creamos una función window.onload  para asegurarnos de que el html se ha cargado completamente antes de 
-pasar a la validación del formulario.*/
-
 window.onload = function () {
-  //console.log("¡Quiero mi pizza!");
+  //event listeners
+  submit.addEventListener("click", validarFormulario); //validacion del formulario completo
 
-    //event listeners
-    //validacion del formulario completo
-    submit.addEventListener("click", validarFormulario); 
+  //validacion inmediata de nombre
+  nombre.addEventListener("keyup", validarNombre);
 
-    //validacion inmediata de nombre
-    nombre.addEventListener("keyup", validarNombre);
+  //validacion inmediata de apellidos
+  apellidos.addEventListener("keyup", validarApellidos);
 
-    //validacion inmediata de apellidos
-    apellidos.addEventListener("keyup", validarApellidos);
-
-    //validacion inmediata de la direccion
-    direccion.addEventListener("keyup", validarDireccion);
+  //validacion inmediata de la direccion
+  ConText2.addEventListener("keyup", function () {
+    var direccion = document.getElementById("ConText2");
+    var mensajeErrorDireccion = document.querySelector(".direccion-error");
+    if (direccion.classList.contains("invalido")) {
+      direccion.classList.remove("invalido");
+      mensajeErrorDireccion.textContent = "";
+    }
+  });
 
   //validacion inmediata del telefono
   telefono.addEventListener("keyup", validarTlf);
@@ -30,7 +29,6 @@ window.onload = function () {
   const ingredientesChkboxes = document.querySelectorAll(
     '#opciones-pizza input[type="checkbox"]'
   );
-
   ingredientesChkboxes.forEach((chkbox) => {
     chkbox.addEventListener("change", validarMinIngredientes);
     chkbox.onchange = calcularPrecio;
@@ -58,7 +56,6 @@ window.onload = function () {
   const terminos = document.getElementById("terminos");
   terminos.addEventListener("click", validarTerminos);
 };
-
 
 /*
  *============= Validacion formulario =============
@@ -103,7 +100,7 @@ function validarNombre() {
 
   // La expresión regular usada tanto en validarNombre() como en validarApellidos() incluye acentos y también la ñ
   //También se asegura de que la primera letra del nombre y apellido sea una mayúscula
-  //Del mismo modo se asegura de que el input no se componga solo de espacios en blanco.
+  //Del mismo modo se asegura de que el input no se componga solo de espacios en blanco
   const pattern =
     /^[A-Z][a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/;
 
@@ -209,7 +206,7 @@ function validarDireccion() {
   let caracteres = new RegExp(caracteresString);
 
   //En primer lugar, eliminamos los espacios duplicados y los espacios al comienzo y al final del input
-  let direccion = document.getElementById("direccion");
+  let direccion = document.getElementById("ConText2");
   let input = direccion.value.trim();
   input.replace(/ {2,}/g, " ");
 
@@ -300,10 +297,10 @@ function validarEmail() {
 
 function validarMinIngredientes() {
   let valido = false;
-  const mensajeError = document.querySelector("#ingredientes p");
+  const mensajeError = document.querySelector("#opciones-pizza p");
 
   const ingredientesChkboxes = document.querySelectorAll(
-    'ingredientes input[type="checkbox"]'
+    '#opciones-pizza input[type="checkbox"]'
   );
   // iteramos por las checkboxes para ver si alguna esta marcada
   // y actualizar el resultado de la validacion
@@ -340,7 +337,7 @@ function validarMinIngredientes() {
 
 function validarMasa() {
   let valido = false;
-  const mensajeErrorMasa = document.querySelector("#masa p");
+  const mensajeErrorMasa = document.querySelector(".error-masa");
   const masaRadioButton = document.getElementsByName("masa");
 
   // Iteramos por los radio button para ver si alguno esta marcado
@@ -373,7 +370,7 @@ function validarMasa() {
  */
 function validarTamanio() {
   let valido = false;
-  const mensajeErrorTamanio = document.querySelector("#tamanio p");
+  const mensajeErrorTamanio = document.querySelector(".error-tamanio");
   const tamanioRadioButton = document.getElementsByName("tamanio");
 
   // Iteramos por los radio button para ver si alguno esta marcado
