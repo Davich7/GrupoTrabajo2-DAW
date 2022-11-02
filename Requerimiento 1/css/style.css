@@ -1,137 +1,141 @@
 * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
-  }
-  
-  form {
-      width: 80%;
-      max-width: 60rem;
-      margin: 1rem auto
-  }
-  
-  fieldset {
-      width: 80%;
-      margin: 2rem auto;
-      border: none;
-      border-bottom: 1px solid #3a9e6f;
-      padding-bottom: 2rem;
-  }
-  
-  form fieldset:first-child {
-      border: 2px solid #3a9e6f;
-  }
-  
-  .form__titulo {
-      color:#006234;
-      font-size: 1.2rem;
-  }
-  
-  fieldset legend {
-      color: #006234;
-      font-style: italic;
-  }
-  
-  .fieldset-row {
-      display:flex;
-      flex-wrap: wrap;
-  }
-  
-  .fieldset-column {
-      display: flex;
-      flex-direction:column;
-      width: 50%;
-      padding: 1rem;
-  }
-  
-  .inline-column {
-      flex-direction: row;
-  }
-  
-  input, 
-  select,
-  input + label {
-      cursor: pointer;
-  }
-  
-  label[for="textArea"] {
-      margin-top: 1rem
-  }
-  
-  #acciones {
-    display: flex;
-    justify-content: space-evenly;
-  }
-  
-  button {
-    display: inline-block;
-    text-decoration: none;
-    padding: 1rem 1.5rem;
-    color: #006234;
-    cursor: pointer;
-    border: 2px #006234 solid;
-    background: inherit;
-  }
-  
-  
-  button:hover,
-  button:active {
-    color: white;
-    background-color: #006234;
-  }
-  
-  .cta {
-      font-weight: bold;
-      background: #006234;
-      color: white;
-      border-color: #006234;
-  }
-  
-  .cta:active,
-  .cta:hover {
-      background: white;
-      color:purple;
-  }
-  
-  .validar:invalid {
-      background: #f8aaaa;
-      border: 1px solid #d60303;
-      outline:  1px solid #d60303;
-  }
-  
-  input.validar:invalid {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-      width:0.8rem;
-      height: 0.8rem;
-      background: #f8aaaa;
-      border: 1px solid #d60303;
-      outline:  1px solid #d60303;
-  }
-  
-  input[type="text"].validar:invalid {
-    width:100%;
-    height: 1.4rem;
+box-sizing: border-box;
 }
-  
-input[type="checkbox"].validar:invalid {
-    width: 0.7rem;
-    height: 0.7rem;
-  }
 
-  
+body {
+font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
 
-  input[type="radio"].validar:invalid {
+form {
+    width: 80%;
+    max-width: 60rem;
+    margin: 1rem auto
+}
+
+fieldset {
+    width: 80%;
+    margin: 2rem auto;
+    border: none;
+    border-bottom: 1px solid #3a9e6f;
+    padding-bottom: 2rem;
+}
+
+form fieldset:first-child {
+    border: 2px solid #3a9e6f;
+}
+
+.form__titulo {
+    color:#006234;
+    font-size: 1.2rem;
+}
+
+fieldset legend {
+    color: #006234;
+    font-style: italic;
+}
+
+.fieldset-row {
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.fieldset-column {
+    display: flex;
+    flex-direction:column;
+    width: 50%;
+    padding: 1rem;
+}
+
+.inline-column {
+    flex-direction: row;
+}
+
+#contacto .inline-column {
+    padding: 2%;
+}
+
+input, 
+select,
+input + label {
+    cursor: pointer;
+}
+
+img{
+margin: auto;
+}
+
+.terminos .inline-column{
+text-align: center;
+}
+
+
+
+button {
+display: inline-block;
+text-decoration: none;
+padding: 1rem 1.5rem;
+color: #006234;
+cursor: pointer;
+border: 2px #006234 solid;
+background: white;
+background: inherit;
+}
+
+
+button:hover,
+button:active {
+    font-weight: bold;
+    background: #006234;
+    color: white;
+    border-color: #006234;
+}
+
+.cta, .res {
+
+}
+
+.cta:active,
+.res:active,
+.res:active,
+.cta:hover {
+
+}
+
+.validar:invalid {
+    background: #f8aaaa;
+    border: 1px solid #d60303;
+    outline:  1px solid #d60303;
+}
+
+input.validar:invalid {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width:0.8rem;
+    height: 0.8rem;
+    background: #f8aaaa;
+    border: 1px solid #d60303;
+    outline:  1px solid #d60303;
+}
+
+input[type="radio"].validar:invalid {
     outline: none;
     border-radius: 50%;
 }
+
+input[type="text"].validar:invalid {
+    width:100%;
+    height: 1.4rem;
+}
+
+input[type="checkbox"].validar:invalid {
+    width: 0.7rem;
+    height: 0.7rem;
+}
+
+
   
-  #contacto .inline-column {
-      padding: 2%;
-  }
+
   
   
   

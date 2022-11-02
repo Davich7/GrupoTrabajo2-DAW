@@ -14,6 +14,8 @@ form.setAttribute("action", "#");
 form.setAttribute("method", "post");
 mainDiv.appendChild(form);
 
+
+//Fieldser general
 const fieldsetGeneral = document.createElement("fieldset");
 form.appendChild(fieldsetGeneral);
 
@@ -177,7 +179,7 @@ const labelCon2 = document.createElement("label");
 
 labelCon2.setAttribute("id", "labelCon2");
 labelCon2.setAttribute("for", "email");
-labelCon2.textContent = "Correo electrónico";
+labelCon2.textContent = "Email ";
 
 // Input de la 2º caja de texto
 const inpCon2 = document.createElement("input");
@@ -528,6 +530,8 @@ const leyendaCita = document.createElement("legend");
 leyendaCita.textContent = " ¿Cuando quieres tener tu cita? ";
 fieldsetCita.appendChild(leyendaCita);
 
+//-----PRIMERA FILA DONDE IRAN EL SELECT Y EL TEXTAREA-----/
+
 //primera fila (div para formato)
 const row1Cit = document.createElement("div");
 row1Cit.classList.add("fieldset-row");
@@ -542,6 +546,7 @@ row1Cit.appendChild(r1c1Cit);
 /*------------------/
 /------SELECT-------/
 /------------------*/
+
 
 // Seleccionador de la cita
 const labelSelect = document.createElement("label");
@@ -583,34 +588,54 @@ selectCita.appendChild(opcionC);
 selectCita.appendChild(opcionD);
 
 
+//----Segunda columna que va a contener el TEXTAREA -----/
+
+//Segunda columna(div para formato)
+const r1c2Cit = document.createElement("div");
+r1c2Cit.classList.add("fieldset-column");
+row1Cit.appendChild(r1c2Cit);
+
+
+
 /*----------------------/
 /-------TEXTAREA--------/
 /----------------------*/
 
-//Segunda fila 
-const row2Cit = document.createElement("div");
-row2Cit.classList.add("fieldset-row");
-fieldsetCita.appendChild(row2Cit);
-
-//primera columna(div para formato)
-const r2c1Cit = document.createElement("div");
-r2c1Cit.classList.add("fieldset-column");
-row2Cit.appendChild(r2c1Cit);
 
 //Label del textarea
 const labelText = document.createElement("label");
 labelText.setAttribute("for", "textArea");
 labelText.textContent = "¿Algun comentario que quieras añadir sobre tu cita? ";
-r2c1Cit.appendChild(labelText);
+r1c2Cit.appendChild(labelText);
 
 //Creación del textarea
 const inpText = document.createElement("textarea");
 inpText.setAttribute("id", "textArea");
-inpText.setAttribute("cols", 40);
+inpText.setAttribute("cols", 30);
 inpText.setAttribute("rows", 1)
 inpText.setAttribute("placeholder", "Escribe aquí:");
 
-r2c1Cit.appendChild(inpText);
+r1c2Cit.appendChild(inpText);
+
+
+
+
+//Div de la 2ª fila donde irá otra imagen
+
+//----IMAGEN 3----//
+
+//segunda fila (div para formato)
+const row2Cit = document.createElement("div");
+row2Cit.classList.add("fieldset-row");
+fieldsetCita.appendChild(row2Cit);
+
+//Nodo de la img
+const img3 = document.createElement("img");
+img3.setAttribute("alt", "dibujo_cabeza_psicologos");
+img3.src = "images/cabeza-psi.jpg";
+img3.width = "400";
+//Vincular la img al div
+row2Cit.appendChild(img3);
 
 
 /*
@@ -639,10 +664,11 @@ const r1c1New = document.createElement("div");
 r1c1New.classList.add("fieldset-column");
 row1New.appendChild(r1c1New);
 
-// Nodos de la etiqueta label (ingredientes)
+// Nodos de la etiqueta de la columna donde se encuentran las opciones
 const labelCheckbox = document.createElement("label");
 labelCheckbox.textContent = "¿Qué contenido quieres recibir?";
 r1c1New.appendChild(labelCheckbox);
+
 
 // Contenedor del 1er Checkbox
 const rowCbox1 = document.createElement("div");
@@ -666,6 +692,24 @@ rowCbox1.appendChild(inpCbox1);
 rowCbox1.appendChild(labelCbox1);
 
 
+// Contenedor del 2º Checkbox
+const rowCbox2 = document.createElement("div");
+rowCbox2.classList.add("inline-column");
+r1c1New.appendChild(rowCbox2);
+// Nodos del 2º Checkbox
+const inpCbox2 = document.createElement("input");
+inpCbox2.setAttribute("type", "checkbox");
+inpCbox2.setAttribute("id", "cbox2");
+inpCbox2.setAttribute("value", "cursos");
+//etiqueta label para el checkbox
+const labelCbox2 = document.createElement("label");
+labelCbox2.setAttribute("id", "labelcbox2");
+labelCbox2.setAttribute("for", "cbox2");
+labelCbox2.textContent = "Información sobre cursos";
+//Vincular el checkbox y label al div
+rowCbox2.appendChild(inpCbox2);
+rowCbox2.appendChild(labelCbox2);
+
 
 // Contenedor del 3er Checkbox
 const rowCbox3 = document.createElement("div");
@@ -684,6 +728,28 @@ labelCbox3.textContent = "Noticias sobre Salud Mental";
 //Vincular el checkbox y label al div
 rowCbox3.appendChild(inpCbox3);
 rowCbox3.appendChild(labelCbox3);
+
+
+// Contenedor del 4º Checkbox
+const rowCbox4 = document.createElement("div");
+rowCbox4.classList.add("inline-column");
+r1c1New.appendChild(rowCbox4);
+// Nodos del 4º Checkbox
+const inpCbox4 = document.createElement("input");
+inpCbox4.setAttribute("type", "checkbox");
+inpCbox4.setAttribute("id", "cbox4");
+inpCbox4.setAttribute("value", "podcast");
+//etiqueta label para el checkbox
+const labelCbox4 = document.createElement("label");
+labelCbox4.setAttribute("id", "labelcbox4");
+labelCbox4.setAttribute("for", "cbox4");
+labelCbox4.textContent = "Actualización de nuestro podcast";
+//Vincular el checkbox y label al div
+rowCbox4.appendChild(inpCbox4);
+rowCbox4.appendChild(labelCbox4);
+
+
+
 
 
 // Contenedor del 5º Checkbox (inline)
@@ -705,74 +771,23 @@ rowCbox5.appendChild(inpCbox5);
 rowCbox5.appendChild(labelCbox5);
 
 
-// div de la 2ª columna donde irán las demás opciones
+
+//-----2º Columna con imagen -----//
+
+// div de la 2ª columna donde irá la imagen
 const r1c2New = document.createElement("div");
 r1c2New.classList.add("fieldset-column");
 row1New.appendChild(r1c2New);
 
-// Contenedor del 2º Checkbox
-const rowCbox2 = document.createElement("div");
-rowCbox2.classList.add("inline-column");
-r1c2New.appendChild(rowCbox2);
-// Nodos del 2º Checkbox
-const inpCbox2 = document.createElement("input");
-inpCbox2.setAttribute("type", "checkbox");
-inpCbox2.setAttribute("id", "cbox2");
-inpCbox2.setAttribute("value", "cursos");
-//etiqueta label para el checkbox
-const labelCbox2 = document.createElement("label");
-labelCbox2.setAttribute("id", "labelcbox2");
-labelCbox2.setAttribute("for", "cbox2");
-labelCbox2.textContent = "Información sobre cursos";
-//Vincular el checkbox y label al div
-rowCbox2.appendChild(inpCbox2);
-rowCbox2.appendChild(labelCbox2);
-
-
-
-// Contenedor del 4º Checkbox
-const rowCbox4 = document.createElement("div");
-rowCbox4.classList.add("inline-column");
-r1c2New.appendChild(rowCbox4);
-// Nodos del 4º Checkbox
-const inpCbox4 = document.createElement("input");
-inpCbox4.setAttribute("type", "checkbox");
-inpCbox4.setAttribute("id", "cbox4");
-inpCbox4.setAttribute("value", "podcast");
-//etiqueta label para el checkbox
-const labelCbox4 = document.createElement("label");
-labelCbox4.setAttribute("id", "labelcbox4");
-labelCbox4.setAttribute("for", "cbox4");
-labelCbox4.textContent = "Actualización de nuestro podcast";
-//Vincular el checkbox y label al div
-rowCbox4.appendChild(inpCbox4);
-rowCbox4.appendChild(labelCbox4);
-
-
-
-
-//Sección términos y condiciones
-
-
-// div de la 1ª fila donde irá la tercera imagen 
-const row2New = document.createElement("div");
-row2New.classList.add("fieldset-row");
-fieldsetNewsLetter.appendChild(row2New);
-
-
-// div de la 1ª columna para formato
-const r2c1New = document.createElement("div");
-r2c1New.classList.add("fieldset-column");
-row2New.appendChild(r2c1New);
-
-
+//----IMAGEN 4----//
 //Nodo de la img
-const img3 = document.createElement("img");
-img3.setAttribute("alt", "newsletter_llegando_a_pc");
-img3.src = "images/newsletter.jpg";
-img3.width = "200";
+const img4 = document.createElement("img");
+img4.setAttribute("alt", "newsletter_llegando_a_pc");
+img4.src = "images/newsletter.jpg";
+img4.width = "200";
 //Vincular la img al div
-r2c1New.appendChild(img3);
+r1c2New.appendChild(img4);
+
 
 
 
@@ -783,9 +798,10 @@ r2c1New.appendChild(img3);
 */
 
 
-//div que contiene el checkbox de términos y condiciones
+//
+// divD donde irán los términos y condiciones
 const row1Acc = document.createElement("div");
-row1Acc.classList.add("fieldset-column");
+row1Acc.classList.add("fieldset-row");
 fieldsetAcciones.appendChild(row1Acc);
 
 //checkbox terminos y condiciones
@@ -794,13 +810,27 @@ terminos.setAttribute("type", "checkbox");
 terminos.setAttribute("name", "terminos");
 terminos.setAttribute("id", "cbox");
 terminos.setAttribute("value", "s");
+terminos.setAttribute("class", "terminos");
 terminos.setAttribute("required", "required");
 row1Acc.appendChild(terminos);
 
 const labelTerminos = document.createElement("label");
 labelTerminos.setAttribute("for", "terminos");
+labelTerminos.setAttribute("class", "terminos");
 labelTerminos.textContent = "Acepto los términos y condiciones";
 row1Acc.appendChild(labelTerminos);
+
+
+
+// div  donde irán los términos y condiciones
+const row2Acc = document.createElement("div");
+row2Acc.classList.add("fieldset-row");
+fieldsetAcciones.appendChild(row2Acc);
+
+//Primer div para el botón de envio
+const r2c1Acc = document.createElement("div");
+r2c1Acc.classList.add("fieldset-column");
+row2Acc.appendChild(r2c1Acc);
 
 //boton de envio
 const submit = document.createElement("button");
@@ -809,14 +839,20 @@ submit.setAttribute("name", "submit");
 submit.setAttribute("id", "submit");
 submit.textContent = "Enviar";
 submit.classList.add("cta");
-fieldsetAcciones.appendChild(submit);
+r2c1Acc.appendChild(submit);
+
+//Segundo div para el botón de reseteo
+const r2c2Acc = document.createElement("div");
+r2c2Acc.classList.add("fieldset-column");
+row2Acc.appendChild(r2c2Acc);
 
 //boton de reseteo
 const reset = document.createElement("button");
 reset.setAttribute("type", "reset");
 reset.setAttribute("name", "reset");
 reset.setAttribute("id", "reset");
+reset.classList.add("res");
 reset.textContent = "Borrar";
-fieldsetAcciones.appendChild(reset);
+r2c2Acc.appendChild(reset);
 
 
