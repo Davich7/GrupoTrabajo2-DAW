@@ -90,17 +90,6 @@ button:active {
     border-color: #006234;
 }
 
-.cta, .res {
-
-}
-
-.cta:active,
-.res:active,
-.res:active,
-.cta:hover {
-
-}
-
 .validar:invalid {
     background: #f8aaaa;
     border: 1px solid #d60303;
