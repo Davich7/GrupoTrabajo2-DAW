@@ -16,21 +16,21 @@
       width: 80%;
       margin: 2rem auto;
       border: none;
-      border-bottom: 1px solid #24cbd3;
+      border-bottom: 1px solid #3a9e6f;
       padding-bottom: 2rem;
   }
   
   form fieldset:first-child {
-      border: 2px solid purple;
+      border: 2px solid #3a9e6f;
   }
   
   .form__titulo {
-      color:purple;
+      color:#006234;
       font-size: 1.2rem;
   }
   
   fieldset legend {
-      color: purple;
+      color: #006234;
       font-style: italic;
   }
   
@@ -69,9 +69,9 @@
     display: inline-block;
     text-decoration: none;
     padding: 1rem 1.5rem;
-    color: purple;
+    color: #006234;
     cursor: pointer;
-    border: 2px purple solid;
+    border: 2px #006234 solid;
     background: inherit;
   }
   
@@ -79,14 +79,14 @@
   button:hover,
   button:active {
     color: white;
-    background-color: purple;
+    background-color: #006234;
   }
   
   .cta {
       font-weight: bold;
-      background: purple;
+      background: #006234;
       color: white;
-      border-color: purple;
+      border-color: #006234;
   }
   
   .cta:active,
@@ -117,10 +117,17 @@
     height: 1.4rem;
 }
   
-  input[type="radio"].validar:invalid {
-      outline: none;
-      border-radius: 50%;
+input[type="checkbox"].validar:invalid {
+    width: 0.7rem;
+    height: 0.7rem;
   }
+
+  
+
+  input[type="radio"].validar:invalid {
+    outline: none;
+    border-radius: 50%;
+}
   
   #contacto .inline-column {
       padding: 2%;

@@ -1,53 +1,8 @@
 window.onload = function () {
-  submit.addEventListener("click", validacion);
+  submit.addEventListener("click", () => {
+  const elementosObligatorios = document.querySelectorAll("[required]")
+  for (let elemento of elementosObligatorios) {
+    elemento.classList.add("validar");
+  }
+});
 }
-
-function validacion(event) {
-
-  //Comprobamos si se rellenan los campos con los datos del cliente
-  if (dni.value.trim() == "") {
-    alert ('Debe de escribir el DNI.')
-    return false;
-  }
-
-  if (nombre.value.trim() == "") {
-    alert ('Debe de escribir el nombre del cliente.')
-    return false;
-  }
-
-  if (apellidos.value.trim() == "") {
-    alert ('Debe de escribir al menos un apellido del cliente.')
-    return false;
-  }
-
-  if (telefono.value.trim() == "") {
-    alert ('Debe de escribir un número de telefono.')
-    return false;
-  }
-
-  if (email.value.trim() == "") {
-    alert ('Debe de escribir un correo electrónico.')
-    return false;
-  }
-
-  //Expresiones para validar los campos del formulario
-  const reNombre = /^[A-Z][A-z]+$/
-  if(!nombre.value.match(reNombre)) {
-    alert ('¡¡¡ERROR!!! Formato del nombre incorrecto.')
-    return false;
-  }
-
-  const reTelefono = /^\d{9}$/
-  if (!telefono.value.match(reTelefono)) {
-    alert ('¡¡¡ERROR!!! Formato del telefono incorrecto.')
-    return false;
-  }
-
-  const reEmail = /^(.+\@.+\..+)$/
-  if (!email.value.match(reEmail)) {
-    alert ('¡¡¡ERROR!!! Formato del correo electronico incorrecto.')
-    return false;
-  }
-}
-
-formulario.onsubmit = validacion;

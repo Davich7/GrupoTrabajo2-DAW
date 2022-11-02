@@ -775,29 +775,32 @@ img3.width = "200";
 r2c1New.appendChild(img3);
 
 
-//div de la 2º columna que contiene el checkbox de términos y condiciones
-const r2c2New = document.createElement("div");
-r2c2New.classList.add("fieldset-column");
-row2New.appendChild(r2c2New);
 
-//checkbox terminos y condiciones
-const terminos = document.createElement("input");
-terminos.setAttribute("type", "checkbox");
-terminos.setAttribute("name", "terminos");
-terminos.setAttribute("id", "terminos");
-terminos.setAttribute("value", "s");
-terminos.setAttribute("required", "required");
-r2c2New.appendChild(terminos);
-
-const labelTerminos = document.createElement("label");
-labelTerminos.setAttribute("for", "terminos");
-labelTerminos.textContent = "Acepto los términos y condiciones";
-r2c2New.appendChild(labelTerminos);
 
 
 /*
 =============================================== Botones del formulario ================================================ 
 */
+
+
+//div que contiene el checkbox de términos y condiciones
+const row1Acc = document.createElement("div");
+row1Acc.classList.add("fieldset-column");
+fieldsetAcciones.appendChild(row1Acc);
+
+//checkbox terminos y condiciones
+const terminos = document.createElement("input");
+terminos.setAttribute("type", "checkbox");
+terminos.setAttribute("name", "terminos");
+terminos.setAttribute("id", "cbox");
+terminos.setAttribute("value", "s");
+terminos.setAttribute("required", "required");
+row1Acc.appendChild(terminos);
+
+const labelTerminos = document.createElement("label");
+labelTerminos.setAttribute("for", "terminos");
+labelTerminos.textContent = "Acepto los términos y condiciones";
+row1Acc.appendChild(labelTerminos);
 
 //boton de envio
 const submit = document.createElement("button");
@@ -816,15 +819,4 @@ reset.setAttribute("id", "reset");
 reset.textContent = "Borrar";
 fieldsetAcciones.appendChild(reset);
 
-
-
-/*
-================================================ validación del formulario =============================================== 
-*/
-submit.addEventListener("click", () => {
-  const elementosObligatorios = document.querySelectorAll("[required]")
-  for (let elemento of elementosObligatorios) {
-    elemento.classList.add("validar");
-  }
-});
 
