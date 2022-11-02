@@ -4,9 +4,9 @@
 pasar a la validación del formulario.*/
 
 window.onload = function () {
-  //console.log("¡Quiero mi pizza!");
+ 
+  //-----------Event listeners---------------//
 
-  //event listeners
   //validacion del formulario completo
   submit.addEventListener("click", validarFormulario); 
 
@@ -26,7 +26,7 @@ window.onload = function () {
   email.addEventListener("keyup", validarEmail);
 
   // validacion inmediata del minimo de ingredientes
-  //y actualizacion del precio
+  // y actualizacion del precio
   const ingredientesChkboxes = document.querySelectorAll(
     '#opciones-pizza input[type="checkbox"]'
   );
@@ -41,6 +41,7 @@ window.onload = function () {
   for (var i = 0; i < masaRadioButton.length; i++) {
     masaRadioButton[i].addEventListener("click", validarMasa);
   }
+ 
 
   //validacion inmediata de los radio button TAMANIO
   //y actualizacion del precio
@@ -52,12 +53,14 @@ window.onload = function () {
   }
 
   // validacion inmediata de seleccion de restaurante
-  restaurante.addEventListener("change", validarRestaurante); //valida cada vez que cambia la seleccion
+  // valida cada vez que cambia la seleccion
+  restaurante.addEventListener("change", validarRestaurante); 
 
   //validacion inmediata de los terminos y condiciones
   const terminos = document.getElementById("terminos");
   terminos.addEventListener("click", validarTerminos);
 };
+
 
 
 /*
@@ -402,8 +405,9 @@ function validarTamanio() {
  * @returns true si se ha elegido restaurante, false si no
  */
 function validarRestaurante() {
+  //descartamos la opcion por defecto
   const opcionesRestaurante = restaurante.querySelectorAll(
-    'option:not([value=""])' //descartamos la opcion por defecto
+    'option:not([value=""])' 
   );
 
   for (const rest of opcionesRestaurante) {
@@ -450,8 +454,10 @@ function calcularPrecio() {
 
   //calculamos el precio del tamanio elegido
   const tamanio = document.querySelector('input[name="tamanio"]:checked');
-  const tamanioACobrar = tamanio === null ? "vacio" : tamanio.value; //para lidiar con el precio antes de que el usuario seleccione tamanio
-  switch (tamanioACobrar) {
+  
+   //para lidiar con el precio antes de que el usuario seleccione tamanio
+  const tamanioACobrar = tamanio === null ? "vacio" : tamanio.value;
+    switch (tamanioACobrar) {
     case "pequeña":
       precio += 5;
       break;
